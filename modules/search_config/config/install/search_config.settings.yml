@@ -1,0 +1,42 @@
+search_config_string_overrides:
+  labels:
+    -
+  title_display:
+    -
+search_config:
+  forms:
+    toggle_forms: 0
+    move_keyword_search: 0
+    advanced_populate: 0
+    remove_containing_wrapper: 'default'
+    advanced_expand: 'default'
+  fields:
+    containing_any:
+      remove: 0
+      roles:
+        -
+    containing_phrase:
+      remove: 0
+      roles:
+        -
+    containing_none:
+      remove: 0
+      roles:
+        -
+    types:
+      filter:
+        -
+      groupings: ''
+    category:
+      filter:
+        -
+      widget: 'textfield'
+    language:
+      remove: 0
+      roles:
+        -
+  results:
+    limit: '10'
+  restrictions:
+    remove_advanced: 0
+    admin_bypass: 1

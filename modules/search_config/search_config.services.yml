@@ -1,0 +1,4 @@
+services:
+  search_config.helper:
+    class: Drupal\search_config\SearchConfigHelper
+    arguments: ['@config.factory', '@current_user']

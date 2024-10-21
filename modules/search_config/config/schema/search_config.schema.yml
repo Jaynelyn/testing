@@ -1,0 +1,112 @@
+search_config.settings:
+  type: config_object
+  mapping:
+    search_config_string_overrides:
+      type: mapping
+      label: 'search_config_string_overrides'
+      mapping:
+        labels:
+          type: sequence
+          sequence:
+            type: string
+        title_display:
+          type: sequence
+          sequence:
+            type: string
+    search_config:
+      type: mapping
+      mapping:
+        forms:
+          type: mapping
+          mapping:
+            toggle_forms:
+              type: integer
+            move_keyword_search:
+              type: integer
+            advanced_populate:
+              type: integer
+            remove_containing_wrapper:
+              type: string
+            advanced_expand:
+              type: string
+        fields:
+          type: mapping
+          mapping:
+            containing_any:
+              type: mapping
+              mapping:
+                remove:
+                  type: integer
+                roles:
+                  type: sequence
+                  sequence:
+                    type: string
+            containing_phrase:
+              type: mapping
+              mapping:
+                remove:
+                  type: integer
+                roles:
+                  type: sequence
+                  sequence:
+                    type: string
+            containing_none:
+              type: mapping
+              mapping:
+                remove:
+                  type: integer
+                roles:
+                  type: sequence
+                  sequence:
+                    type: string
+            types:
+              type: mapping
+              mapping:
+                remove:
+                  type: integer
+                roles:
+                  type: sequence
+                  sequence:
+                    type: string
+                filter:
+                  type: sequence
+                  sequence:
+                    type: string
+                groupings:
+                  type: string
+            category:
+              type: mapping
+              mapping:
+                remove:
+                  type: integer
+                roles:
+                  type: sequence
+                  sequence:
+                    type: string
+                filter:
+                  type: sequence
+                  sequence:
+                    type: string
+                widget:
+                  type: string
+            language:
+              type: mapping
+              mapping:
+                remove:
+                  type: integer
+                roles:
+                  type: sequence
+                  sequence:
+                    type: string
+        results:
+          type: mapping
+          mapping:
+            limit:
+              type: string
+        restrictions:
+          type: mapping
+          mapping:
+            remove_advanced:
+              type: integer
+            admin_bypass:
+              type: integer

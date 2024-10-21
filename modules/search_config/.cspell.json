@@ -1,0 +1,22 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "ignoreWords": [
+    "Matchs",
+    "Naveen",
+    "Valecha",
+    "Yanick",
+    "advsearch",
+    "fkeys",
+    "fkeywords",
+    "gkey",
+    "glabel",
+    "glabels",
+    "gtype",
+    "gtypes",
+    "skey",
+    "slabel",
+    "slabels",
+    "usesearch"
+  ]
+}

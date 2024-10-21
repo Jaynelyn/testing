@@ -1,0 +1,11 @@
+name: Preprocess
+type: module
+description: Provides a plugin type for preprocessing.
+core_version_requirement: ^9 || ^10
+php: 7.1
+package: Theming
+
+# Information added by Drupal.org packaging script on 2023-03-14
+version: '2.1.0'
+project: 'preprocess'
+datestamp: 1678820724

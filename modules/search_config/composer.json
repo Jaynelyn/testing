@@ -1,0 +1,66 @@
+{
+  "name": "drupal/search_config",
+  "description": "Modify search form, including enforcing search restrictions by content type.",
+  "type": "drupal-module",
+  "license": "GPL-2.0-or-later",
+  "keywords": ["Drupal"],
+  "homepage": "https://www.drupal.org/project/search_config",
+  "authors": [
+    {
+      "name": "Alan D.",
+      "homepage": "https://www.drupal.org/u/alan-d",
+      "role": "Maintainer"
+    },
+    {
+      "name": "canen",
+      "homepage": "https://www.drupal.org/user/16188",
+      "role": "Maintainer"
+    },
+    {
+      "name": "Joseph Yanick (jbomb)",
+      "homepage": "https://www.drupal.org/u/jbomb",
+      "role": "Maintainer"
+    },
+    {
+      "name": "Naveen Valecha (naveenvalecha)",
+      "homepage": "https://www.drupal.org/u/naveenvalecha",
+      "role": "Maintainer"
+    },
+    {
+      "name": "Stefan Ruijsenaars (stefan.r)",
+      "homepage": "https://www.drupal.org/u/stefanr-0",
+      "role": "Maintainer"
+    },
+    {
+      "name": "Juraj Nemec (poker10)",
+      "homepage": "https://www.drupal.org/u/poker10",
+      "role": "Maintainer"
+    },
+    {
+      "name": "Karthik Kumar D K (heykarthikwithu)",
+      "homepage": "https://www.drupal.org/u/heykarthikwithu",
+      "role": "Maintainer"
+    },
+    {
+      "name": "Neetu Morwani (neetu morwani)",
+      "homepage": "https://www.drupal.org/u/neetu-morwani",
+      "role": "Maintainer"
+    },
+    {
+      "name": "Joyce George (joyceg)",
+      "homepage": "https://www.drupal.org/u/joyceg",
+      "role": "Maintainer"
+    },
+    {
+      "name": "Viktor Holovachek (AstonVictor)",
+      "homepage": "https://www.drupal.org/u/astonvictor",
+      "role": "Maintainer"
+    }
+  ],
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/search_config",
+    "source": "https://git.drupalcode.org/project/search_config"
+  },
+  "require": {  }
+}

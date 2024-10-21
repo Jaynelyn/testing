@@ -1,0 +1,7 @@
+facebook_block:
+  version: VERSION
+  js:
+    facebook_block.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
