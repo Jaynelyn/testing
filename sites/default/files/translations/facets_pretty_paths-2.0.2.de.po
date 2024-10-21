@@ -1,0 +1,22 @@
+# German translation of Facets Pretty Paths (2.0.2)
+# Copyright (c) 2024 by the German translation team
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Facets Pretty Paths (2.0.2)\n"
+"POT-Creation-Date: 2024-08-07 15:46+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Language-Team: German\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+msgid "Home"
+msgstr "Startseite"
+msgid "Search"
+msgstr "Suche"
+msgid "Default"
+msgstr "Standard"
+msgid "Taxonomy term name"
+msgstr "Taxonomiebegriff-Name"

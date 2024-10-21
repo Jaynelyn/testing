@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="36" viewBox="0 0 32 36">
+  <g id="Group_38069" data-name="Group 38069" transform="translate(-10.78 -8.07)">
+    <path id="Path_2466" data-name="Path 2466" d="M29.6,52.476,28.8,51.2h0a1.5,1.5,0,1,0-2.512-.918l-1.5.188A3.008,3.008,0,1,1,29.9,52.227,1.5,1.5,0,0,1,29.6,52.476Z" transform="translate(-3.432 -9.669)" fill="#f7af9d"/>
+    <path id="Path_2467" data-name="Path 2467" d="M41.6,29.907c-.579.579-2.948-.3-6.084-2.745a37.9,37.9,0,0,1-3.5-3.106,36.565,36.565,0,0,1-3.279-3.715c-2.316-3.008-3.136-5.264-2.572-5.858a.752.752,0,0,1,.541-.173c1.429,0,4.956,1.948,9.025,6.016C40.528,25.109,42.378,29.117,41.6,29.907Z" transform="translate(-3.689 -1.546)" fill="#e0fbfc"/>
+    <path id="Path_2468" data-name="Path 2468" d="M36.424,29.133a37.9,37.9,0,0,1-3.5-3.106,36.566,36.566,0,0,1-3.279-3.715c1.166-.286,3.046.541,4.64,2.136S36.739,27.967,36.424,29.133Z" transform="translate(-4.629 -3.515)" fill="#f7e3af"/>
+    <rect id="Rectangle_1839" data-name="Rectangle 1839" width="6.016" height="1.504" transform="translate(34.457 15.334) rotate(-45)" fill="#ee8d5a"/>
+    <rect id="Rectangle_1840" data-name="Rectangle 1840" width="6.016" height="1.504" transform="translate(36.764 17.773)" fill="#ee8d5a"/>
+    <rect id="Rectangle_1841" data-name="Rectangle 1841" width="1.504" height="6.016" transform="translate(31.548 8.07)" fill="#ee8d5a"/>
+    <path id="Path_2469" data-name="Path 2469" d="M10.78,45.308a3.392,3.392,0,0,0,3.384,3.384,3.317,3.317,0,0,0,2.1-.752l-4.73-4.73A3.317,3.317,0,0,0,10.78,45.308Z" transform="translate(0 -8.706)" fill="#f7af9d"/>
+    <rect id="Rectangle_1842" data-name="Rectangle 1842" width="3.76" height="8.273" transform="translate(11.503 33.421) rotate(-45)" fill="#b0d0d3"/>
+    <path id="Path_2470" data-name="Path 2470" d="M19.916,41.878c1.5,1.752,5.964,6.016,12.439,4.512l.752-2.361a12.928,12.928,0,0,1-11.664-3.708ZM23.767,18.73c-1,9.07-5.776,13.537-7.137,14.62l4.881,4.881c1.09-1.361,5.55-6.137,14.62-7.137A31.361,31.361,0,0,1,29.174,25.7a31.188,31.188,0,0,1-5.407-6.972Z" transform="translate(-1.45 -2.636)" fill="#ee8d5a"/>
+  </g>
+</svg>
