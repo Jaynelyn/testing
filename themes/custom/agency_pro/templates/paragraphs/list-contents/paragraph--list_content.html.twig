@@ -1,0 +1,31 @@
+{% set paragraph_parent = paragraph.getParentEntity() %}
+{% set variant = paragraph_parent.field_styles.value %}
+    {% if variant in 'style1' %}
+        <div class="col-lg-6 col-md-6 col-12">
+            <div class="item" data-aos="fade-down" data-aos-anchor-placement="bottom-bottom">
+                <div class="icon">
+                    {{ content.field_icon.0 }}
+                </div>
+                <div class="item-content">
+                    <h4>{{ content.field_title.0 }}</h4>
+                    {{ content.field_description.0 }}
+                </div>
+            </div>
+        </div>
+    {% elseif variant in 'style3' %}
+     <li>
+        <span class="icon">
+             {{ content.field_icon.0 }}
+        </span>{{ content.field_title.0 }}
+    </li>
+    {% else %}
+        <div class="list">
+            <div class="icon">
+            {{ content.field_icon.0 }}
+            </div>
+            <div class="list-content">
+                <h6>{{ content.field_title.0 }}</h6>
+                {{ content.field_description.0 }}
+            </div>
+        </div>
+    {% endif %}

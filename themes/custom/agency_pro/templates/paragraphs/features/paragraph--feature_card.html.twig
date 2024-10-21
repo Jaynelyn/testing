@@ -1,0 +1,41 @@
+<div class="col-lg-4 col-md-6 col-12">
+    {% if content.field_item_inverse.0['#markup'] in '1' %}
+        <div class="item inverse" data-aos="zoom-in">
+            {% if content.field_read_more.0 %}
+                <h4><a href="{{ content.field_read_more.0['#url']}}" title="{{ content.field_read_more.0['#title']}}">{{ content.field_title.0 }}</a></h4>
+            {% else %}
+                <h4>{{ content.field_title.0 }}</h4>                
+            {% endif %}
+           {{ content.field_description.0 }}
+            {% if content.field_read_more.0 %}
+                <a href="{{ content.field_read_more.0['#url']}}" class="btn btn-primary btn-style-3 btn-style-sm" title="{{ content.field_read_more.0['#title']}}">{{ content.field_read_more.0['#title']}}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="34" height="23.375" viewBox="0 0 34 23.375">
+                        <path data-name="Icon ionic-ios-arrow-round-forward" d="M29.558,11.7a1.626,1.626,0,0,0-.012,2.24l7.18,7.414H9.4a1.584,1.584,0,0,0,0,3.165H36.714l-7.18,7.414a1.638,1.638,0,0,0,.012,2.24,1.5,1.5,0,0,0,2.161-.012l9.731-10.1h0a1.783,1.783,0,0,0,.319-.5,1.551,1.551,0,0,0,.118-.609,1.613,1.613,0,0,0-.437-1.108l-9.731-10.1A1.473,1.473,0,0,0,29.558,11.7Z" transform="translate(-7.875 -11.251)" fill="#111"></path>
+                    </svg>
+                </a>
+            {% endif %}
+            <div class="icon">
+                {{ content.field_icon.0 }}
+            </div>
+        </div>
+    {% else %}
+        <div class="item" data-aos="zoom-in">
+            <div class="icon">
+                {{ content.field_icon.0 }}
+            </div>
+            {% if content.field_read_more.0 %}
+                <h4><a href="{{ content.field_read_more.0['#url']}}" title="{{ content.field_read_more.0['#title']}}">{{ content.field_title.0 }}</a></h4>
+            {% else %}
+                <h4>{{ content.field_title.0 }}</h4>       
+            {% endif %}
+            {{ content.field_description.0 }}
+            {% if content.field_read_more.0 %}
+                <a href="{{ content.field_read_more.0['#url']}}" class="btn btn-primary btn-style-3 btn-style-sm" title="{{ content.field_read_more.0['#title']}}">{{ content.field_read_more.0['#title']}}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="34" height="23.375" viewBox="0 0 34 23.375">
+                        <path data-name="Icon ionic-ios-arrow-round-forward" d="M29.558,11.7a1.626,1.626,0,0,0-.012,2.24l7.18,7.414H9.4a1.584,1.584,0,0,0,0,3.165H36.714l-7.18,7.414a1.638,1.638,0,0,0,.012,2.24,1.5,1.5,0,0,0,2.161-.012l9.731-10.1h0a1.783,1.783,0,0,0,.319-.5,1.551,1.551,0,0,0,.118-.609,1.613,1.613,0,0,0-.437-1.108l-9.731-10.1A1.473,1.473,0,0,0,29.558,11.7Z" transform="translate(-7.875 -11.251)" fill="#111"></path>
+                    </svg>
+                </a>
+            {% endif %}
+        </div>
+    {% endif %}
+</div>

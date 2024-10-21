@@ -1,0 +1,9 @@
+{% if content.field_testimonials.0.contents['#display_id'] in 'block_1' %}
+    {% include '@agency_pro/paragraphs/testimonials/testimonial1.html.twig' %}
+{% elseif content.field_testimonials.0.contents['#display_id'] in 'block_2' %}
+    {% include '@agency_pro/paragraphs/testimonials/testimonial2.html.twig' %}
+{% elseif content.field_testimonials.0.contents['#display_id'] in 'block_3' %}
+    {% include '@agency_pro/paragraphs/testimonials/testimonial3.html.twig' %}
+{% elseif content.field_testimonials.0.contents['#display_id'] in 'block_4' %}
+    {% include '@agency_pro/paragraphs/testimonials/testimonial4.html.twig' %}
+{% endif %}

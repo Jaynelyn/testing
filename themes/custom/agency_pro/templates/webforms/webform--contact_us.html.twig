@@ -1,0 +1,33 @@
+{% set paragraph_parent = content.getParentEntity() %}
+{% set variant = paragraph_parent.field_title.value %}
+<div class="webform-title">{{variant}}</div>
+<form {{attributes}}>
+    <div class="label">
+        <div class="form-group name">
+            {{ element.elements.name }}
+        </div>
+    </div>
+    <div class="label"> 
+        <div class="form-group subject">
+            {{ element.elements.subject }}
+        </div>
+    </div>
+    <div class="label">
+        <div class="form-group email">
+            {{ element.elements.email }}
+        </div>
+    </div>
+    <div class="label"> 
+        <div class="form-group message">
+            {{ element.elements.message }}
+        </div>
+    </div>
+    <div class="col-12">
+        <div class="form-group button">	
+            {{ element.elements.actions }}
+        </div>
+    </div>
+    {{ element.form_token }}
+    {{ element.form_build_id }}
+    {{ element.form_id }}
+</form>

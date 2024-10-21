@@ -1,0 +1,36 @@
+{# {% if links %}
+<div class="language-drp">
+    <ul class="lang-dropdown-menu">
+        <li class="lang-dropdown-item">
+            <a href="javascript:void(0);" role="button" class="nav-link dropdown-toggle" id="navbarLanguageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                <div class="active-lang ">{{ links['activeLink'].text }} </div>
+            </a>
+            <ul class="language-drop-down" >
+                {%- for key, item in links -%}
+                    {% if key is not same as("activeLink") %}
+                    <li class="lang-dropdown-item">{{ item.link }}</li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </li>
+    </ul>
+</div>
+{% endif %} #}
+{% if links %}
+<div class="language-drp">
+    <ul class="lang-dropdown-menu">
+        <li class="lang-dropdown-item dropdown">
+            <a href="javascript:void(0);" role="button" class="nav-link dropdown-toggle" id="navbarLanguageDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                <div class="active-lang ">{{ links['activeLink'].text }} </div>
+            </a>
+            <ul class="language-drop-down dropdown-menu" aria-labelledby="navbarLanguageDropdown" >
+                {%- for key, item in links -%}
+                    {% if key is not same as("activeLink") %}
+                    <li class="lang-dropdown-item">{{ item.link }}</li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </li>
+    </ul>
+</div>
+{% endif %}

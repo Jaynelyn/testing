@@ -1,0 +1,21 @@
+<div class="search-form">
+  <form action="{{base_url}}/search/node" method="get">
+    
+  </form>
+  <h2>Search Result - "{{ keyword }}"</h2>
+  <p>We Found <span>{{ total_items_count }}</span> Search Results For "{{ keyword }}"</p>
+</div>
+<div class="wrapper region region-content">
+  {%- if title is not empty -%}
+    <h2 class="text-center">{{ title }}</h2>
+  {%- endif -%}
+  {%- if items -%}
+    <ol class="search-list node-results p-0">
+        {%- for item in items -%}
+          {{ item.value }}
+        {%- endfor -%}
+		</ol>
+{%- else -%}
+	{{- empty -}}
+{%- endif -%}
+</div>

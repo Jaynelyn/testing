@@ -1,0 +1,9 @@
+{% if content.field_styles.0['#markup'] in 'style1' %}
+    {% include '@agency_pro/paragraphs/list-contents/style1.html.twig' %}
+{% elseif content.field_styles.0['#markup'] in 'style3' %}
+    {% include '@agency_pro/paragraphs/list-contents/style3.html.twig' %}
+{% else %}
+    <div class="about-lists">
+        {{ content.field_list_content }}
+    </div>
+{% endif %}

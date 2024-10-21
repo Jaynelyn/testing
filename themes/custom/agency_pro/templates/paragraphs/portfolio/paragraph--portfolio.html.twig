@@ -1,0 +1,26 @@
+{% if content.field_portfolio.0.contents['#display_id'] in 'block_1' %}
+    {% include '@agency_pro/paragraphs/portfolio/masonry.html.twig' %}
+{% elseif content.field_portfolio.0.contents['#display_id'] in 'block_3' %}
+    {% include '@agency_pro/paragraphs/portfolio/grid-filter.html.twig' %}
+{% elseif content.field_portfolio.0.contents['#display_id'] in 'block_4' %}
+    {% include '@agency_pro/paragraphs/portfolio/portfolio-grid-column.html.twig' %}
+{% elseif content.field_portfolio.0.contents['#display_id'] in 'block_5' %}
+    {% include '@agency_pro/paragraphs/portfolio/portfolio-grid-column.html.twig' %}
+{% elseif content.field_portfolio.0.contents['#display_id'] in 'block_6' %}
+    {% include '@agency_pro/paragraphs/portfolio/portfolio-grid-column.html.twig' %}
+{% elseif content.field_portfolio.0.contents['#display_id'] in 'block_7' %}
+    {% include '@agency_pro/paragraphs/portfolio/masonry-filter.html.twig' %}
+{% elseif content.field_portfolio.0.contents['#display_id'] in 'block_9' %}
+    {% include '@agency_pro/paragraphs/portfolio/masonry.html.twig' %}
+{% else %}
+    {% include '@agency_pro/paragraphs/portfolio/grid.html.twig' %}
+{% endif %}
+
+
+{# {% if content.field_portfolio_variant.0['#markup'] in 'masonry' %}
+    {% include '@agency_pro/paragraphs/portfolio/masonry.html.twig' %}
+{% elseif content.field_portfolio_variant.0['#markup'] in 'grid-filter' %}
+    {% include '@agency_pro/paragraphs/portfolio/grid-filter.html.twig' %}
+{% else %}
+    {% include '@agency_pro/paragraphs/portfolio/grid.html.twig' %}
+{% endif %} #}

@@ -1,0 +1,5 @@
+{% if content.field_layout.0['#markup'] in 'Sidebar' %}
+    {% include '@agency_pro/node/services/services-sidebar.html.twig' %} 
+{% else %}
+    {% include '@agency_pro/node/services/services--full.html.twig' %} 
+{% endif %}

@@ -1,0 +1,23 @@
+<div class="planning"> 
+    <div class="container">
+        <div class="item">
+            {% if content.field_image[0] %}
+                <img src="{{file_url(content.field_image['#items'].entity.uri.value)}}" alt="{{content.field_image['#items'].alt}}">
+            {% endif %}
+            {{ content.field_text_editor }}
+        </div>
+    </div>
+    <div class="left-side-wave">
+        <svg xmlns="http://www.w3.org/2000/svg" width="962" height="948" viewBox="0 0 962 948">
+            <path id="Path_2465" data-name="Path 2465" d="M-11279-18692.648s168.374-63.777,346.883,95.666,463.27,119.051,586.526,448.568-176.383,399.674-433.52,312.51-499.89,78.658-499.89,78.658Z" transform="translate(11279.001 18705.246)" fill="#faf3ed"></path>
+        </svg>
+    </div>
+</div>
+<div class="overview-features">
+    <div class="container">
+        <div class="overview">
+            {{ content.field_body }}
+        </div>
+        {{ content.field_overview_features }}
+    </div>
+</div>

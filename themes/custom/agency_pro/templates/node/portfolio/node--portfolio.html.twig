@@ -1,0 +1,5 @@
+{% if content.field_portfolio_variant.0['#markup'] in 'image' %}
+    {% include '@agency_pro/node/portfolio/portfolio-image.html.twig' %} 
+{% elseif content.field_portfolio_variant.0['#markup'] in 'slider' %}
+    {% include '@agency_pro/node/portfolio/portfolio-slider.html.twig' %} 
+{% endif %}

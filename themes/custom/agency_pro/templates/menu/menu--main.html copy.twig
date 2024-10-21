@@ -1,0 +1,141 @@
+{% import _self as menus %}
+
+{#
+  We call a macro which calls itself to render the full tree.
+  @see http://twig.sensiolabs.org/doc/tags/macro.html
+#}
+{{ menus.menu_links(items, attributes, 0) }}
+
+{% macro menu_links(items, attributes, menu_level, link_type) %}
+  {% import _self as menus %}
+    {% if menu_level == 0 %}
+      <ul class="navbar-nav">
+          {% if items %}
+            {% for item in items %}
+              {% if item.below %}
+                {%
+                    set classes = [
+                      'nav-link dropdown-toggle' ,
+                      item.in_active_trail ? 'active',
+                    ]
+                  %}  
+
+                {% if item.url.getOption('attributes').link_type in 'mega_menu' %}
+                  {% set li_class = 'nav-item dropdown mega-menu' %}
+                {% elseif item.url.getOption('attributes').link_type in 'blogs_menu' %}
+                  {% set li_class = 'nav-item dropdown blogs-menu' %}
+                {% else %}
+                  {% set li_class = 'nav-item dropdown dropdown-item ' %}
+                {% endif %}  
+                <li class="{{li_class}}">
+                  {% if item.url.toString|length < 0 %}
+                  <span {{ item.attributes.addClass(classes)}} href="{{ item.url }}" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   {{ item.title }}
+                   {# {{kint(item)}} #}
+                  </span>
+                  {% else %}
+                  <a {{ item.attributes.addClass(classes)}} href="{{ item.url }}" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                   {{ item.title }}
+                  </a>
+                  {% endif %}
+                  <ul class="dropdown-menu dropdown-wrapper rounded-0 primary-color border-0  menu-level-0">
+                    {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+                  </ul>
+                </li>
+              {% else %}
+                {%
+                    set classes = [
+                      'nav-link menu-link' ,
+                      item.in_active_trail ? 'active',
+                    ]
+                  %}
+                <li class="nav-item">
+                  {% if item.url.toString|length < 0 %}
+                  <span {{ item.attributes.addClass(classes)}} href="{{ item.url }}">{{ item.title }}</span>
+                  {% else %}
+                  <a {{ item.attributes.addClass(classes)}} href="{{ item.url }}">{{ item.title }}</a>
+                  {% endif %}
+                </li>
+              {% endif %}
+            {% endfor %}
+          {% endif %}
+        </ul>
+    {% elseif menu_level == 1 %}
+      {% if items %}
+          {% for item in items %}
+            {% if item.below %}
+              {% if item.url.getOption('attributes').link_type in 'mega_menu_1' %}
+                <li>
+                  <ul>
+                      {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+                  </ul>
+                </li>
+                {% else %}
+                <li class="dropdown-item dropdown-submenu">
+                  {% if item.url.toString|length < 0 %}
+                        <span class="drop-toggle" href="{{ item.url }}">{{ item.title }}</span>
+                        <ul class="dropdown-wrapper dropdown-menu rounded-0 primary-color border-0 menu-level-1">
+                          {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+                        </ul>
+                  {% else %}
+                        <a class="drop-toggle" href="{{ item.url }}">{{ item.title }}</a>
+                        {# <ul class="dropdown-wrapper dropdown-menu rounded-0 primary-color border-0 menu-level-01"> #}
+                        <ul class="dropdown-menu collapse">
+                          {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+                        </ul>
+                  {% endif %}
+                </li>
+              {% endif %}
+            {% else %}
+            <li class="dropdown-item">
+            {% if item.url.toString|length < 0 %}
+            <span href="{{ item.url }}">{{ item.title }}</span>
+            {% else %}
+            <a href="{{ item.url }}">{{ item.title }}</a>
+            {% endif %}
+            </li>
+            {% endif %}
+          {% endfor %}
+      {% endif %}
+    {% elseif menu_level == 2 %}
+        {% if items %}
+          {% for item in items %}
+            {% if item.below %}
+              <li class="dropdown-submenu">
+              {% if item.url.toString|length < 0 %}
+              <span href="{{ item.url }}">{{ item.title }}</span>
+                    <ul class="dropdown-menu dropdown-wrapper rounded-0 primary-color border-0">
+                      {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+                    </ul>
+              {% else %}
+              <a href="{{ item.url }}">{{ item.title }}</a>
+                    <ul class="dropdown-menu dropdown-wrapper rounded-0 primary-color border-0">
+                      {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+                    </ul>
+              {% endif %}
+              </li>
+            {% else %}
+            <li class="dropdown-item">
+            {% if item.url.toString|length < 0 %}
+              <span href="{{ item.url }}">{{ item.title }}</span>
+            {% else %}
+              <a href="{{ item.url }}">{{ item.title }}</a>
+            {% endif %}
+            </li>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+    {% elseif menu_level == 3 %}
+        {% if items %}
+          {% for item in items %}
+            <li class="dropdown-item">
+            {% if item.url.toString|length < 0 %}
+              <span href="{{ item.url }}">{{ item.title }}</span>
+            {% else %}
+              <a href="{{ item.url }}">{{ item.title }}</a>
+            {% endif %}
+            </li>
+          {% endfor %}
+        {% endif %}
+    {% endif %}
+{% endmacro %}

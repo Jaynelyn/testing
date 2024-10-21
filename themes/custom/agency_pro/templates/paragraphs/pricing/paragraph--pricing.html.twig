@@ -1,0 +1,7 @@
+{% if content.field_pricing_variant.0['#markup'] in 'pricing1' %}
+    {% include '@agency_pro/paragraphs/pricing/pricing1.html.twig' %}
+{% elseif content.field_pricing_variant.0['#markup'] in 'pricing2' %}
+    {% include '@agency_pro/paragraphs/pricing/pricing2.html.twig' %}
+{% else %}
+    {% include '@agency_pro/paragraphs/pricing/pricing3.html.twig' %}
+{% endif %}

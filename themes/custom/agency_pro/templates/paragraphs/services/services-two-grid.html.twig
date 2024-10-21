@@ -1,0 +1,11 @@
+{% if content.field_style_variant.0['#markup'] in 'style1' %}
+    <section class="services-grid-2-column services-style-1 dt-section" data-aos="fade-up">
+{% elseif content.field_style_variant.0['#markup'] in 'style2' %}
+    <section class="services-grid-2-column services-style-2 dt-section" data-aos="fade-up">
+{% else %}
+    <section class="services-grid-2-column dt-section" data-aos="fade-up">
+{% endif %}
+    <div class="container">
+        {{ content.field_services }}
+    </div>
+</section>

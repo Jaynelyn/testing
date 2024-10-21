@@ -1,0 +1,9 @@
+{% if content.field_statement_variant.0['#markup'] in 'statement1' %}
+    {% include '@agency_pro/paragraphs/statements/statement1.html.twig' %}
+{% elseif content.field_statement_variant.0['#markup'] in 'statement3' %}
+    {% include '@agency_pro/paragraphs/statements/statement3.html.twig' %}
+{% elseif content.field_statement_variant.0['#markup'] in 'statement4' %}
+    {% include '@agency_pro/paragraphs/statements/statement4.html.twig' %}
+{% else %}
+    {% include '@agency_pro/paragraphs/statements/statement2.html.twig' %}
+{% endif %}

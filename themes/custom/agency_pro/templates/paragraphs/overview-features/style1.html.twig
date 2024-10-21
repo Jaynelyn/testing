@@ -1,0 +1,18 @@
+<div class="features" data-aos="fade-up">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 col-12">
+            <div class="image">
+                <img class="img-fluid" src="{{ file_url(content.field_image['#items'].entity.uri.value)}}"
+                    alt="{{ content.field_image['#items'].alt }}" 
+                    title="{{ content.field_image['#items'].title }}">
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-12 col-12">
+            <div class="features-content">
+                <h4>{{ content.field_title.0}}</h4>
+               {{ content.field_description.0 }}
+               {{ content.field_list_content_list }}
+            </div>
+        </div>
+    </div>
+</div>

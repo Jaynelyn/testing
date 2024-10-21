@@ -1,0 +1,40 @@
+<div class="carousel-style-4">
+    <div class="style-4-carousel owl-carousel owl-theme">
+        <div class="row">
+            {% for row in rows %}
+                {% if loop.index <= 2 %}
+                    <div class="item-wrapper item-{{loop.index}}">
+                        {{row.content}}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="row">
+            {% for row in rows %}
+                {% if loop.index >= 4 and loop.index <= 5  %}
+                    <div class="item-wrapper item-{{loop.index}}">
+                        {{row.content}}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="row">
+            {% for row in rows %}
+                {% if loop.index >= 6 and loop.index <= 7  %}
+                    <div class="item-wrapper item-{{loop.index}}">
+                        {{row.content}}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+        <div class="row">
+            {% for row in rows %}
+                {% if loop.index >= 8 and loop.index <= 9  %}
+                    <div class="item-wrapper item-{{loop.index}}">
+                        {{row.content}}
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>

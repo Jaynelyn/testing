@@ -1,0 +1,5 @@
+{% if content.field_feature_variant.0['#markup'] in 'feature1' %}
+    {% include '@agency_pro/paragraphs/features/feature1.html.twig' %}
+{% else %}
+    {% include '@agency_pro/paragraphs/features/feature2.html.twig' %}
+{% endif %}

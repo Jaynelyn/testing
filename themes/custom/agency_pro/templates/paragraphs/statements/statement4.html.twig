@@ -1,0 +1,17 @@
+<section class="faq-page-question" data-aos="fade-up">
+    <div class="row">
+        <div class="col-md-6 col-12">
+            <div class="image f-section">
+                <img class="img-fluid" src="{{ file_url(content.field_image['#items'].entity.uri.value)}}" alt="{{ content.field_image['#items'].alt }}" title="{{ content.field_image['#items'].title }}">
+            </div>
+        </div>
+        <div class="col-md-6 col-12">
+            <div class="content dt-section f-section" style="background-image: url('{{ content.field_background_image.0 }}');">
+               {{ content.field_statements }}
+                {% if content.field_read_more.0 %}
+                    <a href="{{ content.field_read_more.0['#url'] }}" class="btn btn-primary btn-style-1 btn-style-lg" title="{{ content.field_read_more.0['#title'] }}">{{ content.field_read_more.0['#title'] }}</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>

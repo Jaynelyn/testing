@@ -1,0 +1,31 @@
+<section class="about-us-2-who-we-are dt-section" data-aos="fade-up">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 col-md-12 col-12">
+                <div class="image">
+                    <div class="exp-img">
+                        {% if content.field_count.0 %}
+                            <span>{{ content.field_count.0 }}</span>
+                            {{ content.field_experience.0 }}
+                        {% endif %}
+                    </div>
+                    <div class="image-1">
+                        <img class="img-fluid" src="{{ file_url(content.field_image['#items'].entity.uri.value)}}" alt="{{ content.field_image['#items'].alt }}" title="{{ content.field_image['#items'].title }}">
+                    </div>
+                    {% if content.field_overlay_image[0] %}
+                    <div class="image-2">
+                        <img class="img-fluid" src="{{ file_url(content.field_overlay_image['#items'].entity.uri.value)}}" alt="{{ content.field_overlay_image['#items'].alt }}" title="{{ content.field_overlay_image['#items'].title }}">
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-lg-5 col-md-12 col-12">
+                <div class="content">
+                    <h2>{{ content.field_title.0 }}</h2>
+                    {{ content.field_description.0 }}
+                    {{ content.field_list_items }}
+                </div>        
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,56 @@
+<div class="list">
+    <div class="accordion-header" id="heading-{{paragraph.id()}}">
+        <button type="button" class="collapsed" data-bs-toggle="collapse" data-bs-target="#collapseOne--{{paragraph.id()}}" aria-expanded="false" aria-controls="collapseOne">
+           <aside class="details">
+                <h4>{{ content.field_title.0 }}</h4>
+                <span>{{ content.field_list_item.0 }}</span>
+            </aside>
+            <span class="btn btn-primary btn-style-3 btn-style-md" title="Title">{{ content.field_tagline.0 }}
+                <span class="panel-open">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="34" height="23.375" viewBox="0 0 34 23.375">
+                        <path data-name="Icon ionic-ios-arrow-round-forward" d="M29.558,11.7a1.626,1.626,0,0,0-.012,2.24l7.18,7.414H9.4a1.584,1.584,0,0,0,0,3.165H36.714l-7.18,7.414a1.638,1.638,0,0,0,.012,2.24,1.5,1.5,0,0,0,2.161-.012l9.731-10.1h0a1.783,1.783,0,0,0,.319-.5,1.551,1.551,0,0,0,.118-.609,1.613,1.613,0,0,0-.437-1.108l-9.731-10.1A1.473,1.473,0,0,0,29.558,11.7Z" transform="translate(-7.875 -11.251)" fill="#111"></path>
+                    </svg>
+                </span>
+                <span class="panel-close d-none">
+                    {# <svg xmlns="http://www.w3.org/2000/svg" width="23.336" height="23.334" viewBox="0 0 384 512">
+                        <path d="M374.6 246.6C368.4 252.9 360.2 256 352 256s-16.38-3.125-22.62-9.375L224 141.3V448c0 17.69-14.33 31.1-31.1 31.1S160 465.7 160 448V141.3L54.63 246.6c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0l160 160C387.1 213.9 387.1 234.1 374.6 246.6z"/>
+                    </svg> #}
+                    <svg xmlns="http://www.w3.org/2000/svg" width="34" height="23.375" viewBox="0 0 34 23.375">
+                        <path data-name="Icon ionic-ios-arrow-round-forward" d="M29.558,11.7a1.626,1.626,0,0,0-.012,2.24l7.18,7.414H9.4a1.584,1.584,0,0,0,0,3.165H36.714l-7.18,7.414a1.638,1.638,0,0,0,.012,2.24,1.5,1.5,0,0,0,2.161-.012l9.731-10.1h0a1.783,1.783,0,0,0,.319-.5,1.551,1.551,0,0,0,.118-.609,1.613,1.613,0,0,0-.437-1.108l-9.731-10.1A1.473,1.473,0,0,0,29.558,11.7Z" transform="translate(-7.875 -11.251)" fill="#111"></path>
+                    </svg>
+                </span>
+            </span>
+        </button>
+    </div>
+    <div id="collapseOne--{{paragraph.id()}}" class="accordion-collapse collapse" aria-labelledby="heading-{{paragraph.id()}}"  data-bs-parent="#{{ accordion_id }}">
+        <div class="content">
+            <div class="content-para">
+                {{ content.field_description.0 }}
+            </div>
+            <a href="#staticBackdrop-{{paragraph.id()}}" class="btn btn-primary btn-style-1 btn-style-lg" title="Title" data-bs-toggle="modal" data-bs-target="#staticBackdrop-{{paragraph.id()}}">{{ content.field_panel_form_title.0 }}</a>
+        </div>
+    </div>
+</div>
+<!-- Modal start-->
+<div class="modal fade" id="staticBackdrop-{{paragraph.id()}}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel-{{paragraph.id()}}" aria-hidden="true">
+    <div class="apply-form modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="staticBackdropLabel-{{paragraph.id()}}">Apply for {{ content.field_title.0}}</h2>
+                <button type="button" data-bs-dismiss="modal" aria-label="Close" data-bs-toggle="modal" data-bs-target="#staticBackdrop-{{paragraph.id()}}">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="23.336" height="23.334" viewBox="0 0 23.336 23.334">
+                        <g id="Icon_feather-cross" data-name="Icon feather-cross" transform="translate(11.668 -16.617) rotate(45)">
+                            <path data-name="Path 1362" d="M18,7.5v25" transform="translate(2 0)" fill="none" stroke="#1b1c21" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+                            <path data-name="Path 1363" d="M7.5,18h25" transform="translate(0 2)" fill="none" stroke="#1b1c21" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+                        </g>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+            {{ content.field_panel_form }}
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal End-->
+<!-- Button trigger modal -->

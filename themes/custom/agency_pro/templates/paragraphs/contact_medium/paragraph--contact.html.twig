@@ -1,0 +1,5 @@
+{% if content.field_styles.0['#markup'] in 'style1' %}
+    {% include '@agency_pro/paragraphs/contact_medium/style1.html.twig' %}
+{% else %}
+    {% include '@agency_pro/paragraphs/contact_medium/style2.html.twig' %}
+{% endif %}

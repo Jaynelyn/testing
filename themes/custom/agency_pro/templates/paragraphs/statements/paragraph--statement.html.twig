@@ -1,0 +1,40 @@
+{% set paragraph_parent = paragraph.getParentEntity() %}
+{% set variant = paragraph_parent.field_statement_variant.value %}
+{% if variant in 'statement1' %}
+    <div class="col-lg-12 col-md-8 col-12">
+        <div class="item" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
+            {% if  content.field_icon.0 %}
+                <div class="icon">
+                {{ content.field_icon.0 }}
+                </div>
+            {% endif %}
+            <div class="item-content">
+                {% if  content.field_title.0 %}
+                    <h4>{{ content.field_title.0 }}</h4>
+                {% endif %}
+                {{ content.field_description.0 }}
+            </div>
+        </div>
+    </div>
+{% elseif variant in 'statement3'  %}
+    <div class="item" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
+        {% if  content.field_title.0 %}
+            <h2>{{ content.field_title.0 }}</h2>
+        {% endif %}
+        {{ content.field_description.0 }}
+    </div>
+{% elseif variant in 'statement4'  %}
+    {% if  content.field_title.0 %}
+        <h2>{{ content.field_title.0 }}</h2>
+    {% endif %}
+    {{ content.field_description.0 }}
+{% else %}
+    <div class="col-lg-6 col-md-6 col-12">
+        <div class="item" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
+            {% if  content.field_title.0 %}
+                <h2>{{ content.field_title.0 }}</h2>
+            {% endif %}
+            {{ content.field_description.0 }}
+        </div>
+    </div>
+{% endif %}

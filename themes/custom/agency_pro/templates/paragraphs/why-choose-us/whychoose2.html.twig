@@ -1,0 +1,23 @@
+<div class="why-choose-us-2 dt-section" data-aos="fade-up">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 col-md-8 col-12">
+                <div class="image">
+                    <img class="img-fluid" src="{{ file_url(content.field_image['#items'].entity.uri.value)}}"
+                        alt="{{ content.field_image['#items'].alt }}" 
+                        title="{{ content.field_image['#items'].title }}">
+                </div>
+            </div>
+            <div class="col-lg-5 col-md-10 col-12">
+                <div class="why-choose-us-content">
+                    <div class="home-2-2-title">
+                        <span>{{ content.field_tagline.0  }}</span>
+                        <h2>{{ content.field_title.0 }}</h2>
+                    </div>
+                    {{ content.field_description.0 }}
+                    {{ content.field_progress_bar }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+{% if content.field_portfolio.0.contents['#display_id'] in 'block_5' %}
+<section class="portfolio-grid-3-column portfolio-2 dt-section" data-aos="fade-up">
+{% elseif content.field_portfolio.0.contents['#display_id'] in 'block_6' %}
+<section class="portfolio-grid-4-column portfolio-2 dt-section" data-aos="fade-up">
+{% else %}
+<section class="portfolio-grid-2-column portfolio-2 dt-section" data-aos="fade-up">
+{% endif %}
+    <div class="container">
+        <div class="portfolio-lists">
+            {{ content.field_portfolio }}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,30 @@
+<section class="about-us-3" data-aos="fade-up">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7 col-md-8 col-12">
+                <div class="image">
+                    <img class="img-fluid" src="{{ file_url(content.field_image['#items'].entity.uri.value)}}" alt="{{ content.field_image['#items'].alt }}" title="{{ content.field_image['#items'].title }}">
+                    <div class="overlay">
+                        <img class="img-fluid" src="{{ file_url(content.field_overlay_image['#items'].entity.uri.value)}}" alt="{{ content.field_overlay_image['#items'].alt }}" title="{{ content.field_overlay_image['#items'].title }}">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 col-md-12 col-12">
+                <div class="about-content">
+                        <div class="home-3-2-title">
+                            <span>{{ content.field_tagline.0 }}</span>
+                            <h2>{{ content.field_title.0 }}</h2>
+                        </div>
+                    {{ content.field_description.0 }}
+                    {{ content.field_list_contents }}
+                    <a href="{{ content.field_read_more.0['#url'] }}" class="btn btn-primary btn-style-1 btn-style-lg" title="{{ content.field_read_more.0['#title'] }}">{{ content.field_read_more.0['#title'] }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="left-side-wave">
+        <svg xmlns="http://www.w3.org/2000/svg" width="962" height="948" viewBox="0 0 962 948">
+            <path id="Path_2465" data-name="Path 2465" d="M-11279-18692.648s168.374-63.777,346.883,95.666,463.27,119.051,586.526,448.568-176.383,399.674-433.52,312.51-499.89,78.658-499.89,78.658Z" transform="translate(11279.001 18705.246)" fill="#faf3ed"/>
+        </svg>
+    </div>
+</section>

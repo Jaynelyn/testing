@@ -1,0 +1,9 @@
+{% if content.field_team_members.0.contents['#display_id'] in 'block_1' %}
+    {% include '@agency_pro/paragraphs/teams/team1.html.twig' %}
+{% elseif content.field_team_members.0.contents['#display_id'] in 'block_2' %}
+    {% include '@agency_pro/paragraphs/teams/team2.html.twig' %}
+{% elseif content.field_team_members.0.contents['#display_id'] in 'block_3' %}
+    {% include '@agency_pro/paragraphs/teams/team3.html.twig' %}
+{% elseif content.field_team_members.0.contents['#display_id'] in 'block_4' %}
+    {% include '@agency_pro/paragraphs/teams/team1.html.twig' %}
+{% endif %}

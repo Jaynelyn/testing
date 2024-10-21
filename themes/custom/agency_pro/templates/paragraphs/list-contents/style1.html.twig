@@ -1,0 +1,14 @@
+<div class="our-values" data-aos="fade-up">
+    {% set value_total =  content.field_list_content['#items']|length %}
+    {% set mid = (value_total / 2)|round - 1 %}
+    <div class="row">
+        {% for i in 0..mid %}
+            {{ content.field_list_content[i] }}
+        {% endfor %}
+    </div>
+    <div class="row">
+        {% for i in (mid + 1)..(value_total - 1) %}
+            {{ content.field_list_content[i] }}
+        {% endfor %}
+    </div>
+</div>

@@ -1,0 +1,7 @@
+{% if content.field_slider.0.contents['#display_id'] in 'block_1' %}
+    {% include '@agency_pro/paragraphs/home-slider/slider_variant1.html.twig' %}
+{% elseif content.field_slider.0.contents['#display_id'] in 'block_2' %} 
+    {% include '@agency_pro/paragraphs/home-slider/slider_variant2.html.twig' %}
+{% else %}
+    {% include '@agency_pro/paragraphs/home-slider/slider_variant3.html.twig' %}
+{% endif %}    

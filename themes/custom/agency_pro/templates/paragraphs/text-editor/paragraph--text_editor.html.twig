@@ -1,0 +1,5 @@
+{% if content.field_text_editor_variant.0['#markup'] in 'style1' %}
+    {% include '@agency_pro/paragraphs/text-editor/style1.html.twig' %}
+{% else %}
+    {% include '@agency_pro/paragraphs/text-editor/style2.html.twig' %}
+{% endif %}

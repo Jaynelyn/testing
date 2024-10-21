@@ -1,0 +1,32 @@
+{% set base_url = url('<front>')  %}
+ <section class="page-banner" style="background-image: url({{base_url}}sites/default/files/default_images/subpage_0.jpg);">
+  <div class="container dt-section">
+    <div class="heading">
+      <h1>{{ user.displayname }}</h1>
+    </div>
+  </div>
+</section>
+
+<section class="users dt-section">
+    <div class="container">
+        <div class="full-width">
+            <div class="profile">
+                {% if content.user_picture[0] %}
+                      <div class="img-wrapper">
+                        {{content.user_picture.0}}
+                      </div>
+                        <h2 class="text-center">Welcome Back "{{ user.displayname }}"</h2>
+                        <a class="btn btn-primary m-auto btn-style-1 btn-style-sm" title="Blog Details" href="{{base_url}}">Go Home 
+                        </a>
+                {% else %}
+                    <div class="img-wrapper">
+                      <img src="{{base_url}}themes/custom/agency_pro/assets/user.jpeg" alt="{{ user.displayname }}">
+                    </div>
+                    <h2 class="text-center" >Welcome Back "{{ user.displayname }}"</h2>
+                    <a class="btn btn-primary m-auto btn-style-1 btn-style-sm" title="Go Home" href="{{base_url}}">Go Home 
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>

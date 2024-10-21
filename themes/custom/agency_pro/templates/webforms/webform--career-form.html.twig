@@ -1,0 +1,35 @@
+<form {{attributes}}>
+    <div class="label">
+        <div class="form-group name">
+            {{ element.elements.name }}
+        </div>
+    </div>
+    <div class="label"> 
+        <div class="form-group phone_number">
+            {{ element.elements.phone_number }}
+        </div>
+    </div>
+    <div class="label">
+        <div class="form-group email">
+            {{ element.elements.mail_id }}
+        </div>
+    </div>
+    <div class="label"> 
+        <div class="form-group role">
+            {{ element.elements.role }}
+        </div>
+    </div>
+    <div class="label"> 
+        <div class="form-group cv">
+            {{ element.elements.cv }}
+        </div>
+    </div>
+    <div class="col-12">
+        <div class="form-group button">	
+            {{ element.elements.actions }}
+        </div>
+    </div>
+    {{ element.form_token }}
+    {{ element.form_build_id }}
+    {{ element.form_id }}
+</form>

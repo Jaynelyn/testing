@@ -1,0 +1,51 @@
+<section class="features-2" data-aos="fade-up">
+    <div class="row">
+        <div class="col-lg-6 col-md-12 col-12">
+            <div class="video">
+                <div class="video-style-2">
+                    <div class="item">
+                        <div class="image">
+                            <img class="img-fluid" src="{{ file_url(content.field_image['#items'].entity.uri.value)}}"
+                                alt="{{ content.field_image['#items'].alt }}" 
+                                title="{{ content.field_image['#items'].title }}">
+                             {% if content.field_video.0 %}
+                                <div class="overlay">
+                                    <a data-fancybox="video-gallery" data-src="{{ content.field_video.0 }}" title="Play">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="101.415" height="101.415" viewBox="0 0 101.415 101.415">
+                                            <g transform="translate(6196 -5173)">
+                                            <g data-name="Rectangle 1269" transform="translate(-6195 5174)" fill="#fff" stroke="#707070" stroke-width="1">
+                                                <rect width="100.327" height="100.327" rx="50.163" stroke="none"/>
+                                                <rect x="0.5" y="0.5" width="99.327" height="99.327" rx="49.663" fill="none"/>
+                                            </g>
+                                            <path d="M54.083,3.375A50.708,50.708,0,1,0,104.79,54.083,50.7,50.7,0,0,0,54.083,3.375ZM74.512,55.033,41.064,75.268a1.085,1.085,0,0,1-1.633-.951V33.848a1.08,1.08,0,0,1,1.633-.951L74.512,53.132A1.118,1.118,0,0,1,74.512,55.033Z" transform="translate(-6199.375 5169.625)" fill="#f93b50"/>
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-12 col-12">
+            <div class="features-content dt-section">
+                {% if content.field_title.0 %}
+                        <div class="home-2-title">
+                            <h2>{{ content.field_title.0 }}</h2>
+                        </div>
+                {% endif %}
+                <div class="features-list">
+                    <div class="row">
+                        {{ content.field_statements }}
+                        {% if content.field_read_more.0 %}
+                            <div class="btn-center">
+                                <a href="{{ content.field_read_more.0['#url'] }}" class="btn btn-primary btn-style-1 btn-style-lg" title="{{ content.field_read_more.0['#title'] }}">{{ content.field_read_more.0['#title'] }}</a>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

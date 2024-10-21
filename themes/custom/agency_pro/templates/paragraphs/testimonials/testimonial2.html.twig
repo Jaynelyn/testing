@@ -1,0 +1,12 @@
+ <div class="dt-section" data-aos="fade-up">
+    <div class="testimonials-2">
+        <div class="container">
+            {% if content.field_title.0 %}
+                <div class="home-2-title">
+                    <h2>{{ content.field_title.0 }}</h2>
+                </div>
+            {% endif %}
+            {{ content.field_testimonials }}
+        </div>
+    </div>
+</div>

@@ -1,0 +1,582 @@
+<?php
+
+/**
+ * @file
+ * Functions to support theming in the SASS Starterkit subtheme.
+ */
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\user\Entity\User;
+use Drupal\flag\Plugin\Flag\EntityFlagType;
+use Drupal\flag\FlagInterface;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\profile\Entity\ProfileInterface;
+use Drupal\profile\Entity\ProfileTypeInterface;
+use Drupal\user\UserInterface;
+use Drupal\media\Entity\Media; 
+use Drupal\file\Entity\File;
+use Drupal\Core\Url;
+use Drupal\image\Entity\ImageStyle;
+use Drupal\flag\FlagService;
+use Drupal\flag\FlagLinkBuilder;
+use Drupal\Core\Mail\MailManagerInterface;
+use Drupal\Component\Utility\Html;
+use Drupal\Component\Utility\SafeMarkup;
+use Drupal\block\Entity\Block;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Drupal\views\Views;
+use Drupal\Component\Utility\Variable;
+use Drupal\webform\Utility\WebformFormHelper;
+use Drupal\taxonomy\Entity\Term;
+use Drupal\paragraphs\Entity\Paragraph;
+
+function agency_pro_preprocess_html(&$variables) {
+  global $base_url;
+  $variables['base_url'] = $base_url;
+  $variables['default_color'] = theme_get_setting('default_color');
+  $variables['primary_color'] = theme_get_setting('primary_color');
+  $variables['secondary_color'] = theme_get_setting('secondary_color');
+  $variables['show_pannel'] = theme_get_setting('show_pannel');
+  $variables['sticky'] = theme_get_setting('sticky');
+  $variables['loader'] = theme_get_setting('loader');
+  $variables['styles'] = theme_get_setting('styles');   
+  // header
+  $variables['header_variation'] = theme_get_setting('header_variation');
+  $variables['color_set'] = ['set_1' => [
+      'title' => t('color_set_1'),
+      'name' => t('Combo 1'),
+      'colors' => [
+      'primary_color' => '#F93B50',
+      'secondary_color' => '#2d353c',
+      ],
+    ],
+    'set_2' => [
+      'title' => t('color_set_2'),
+      'name' => t('Combo 2'),
+      'colors' => [
+      'primary_color' => '#7ba021',
+      'secondary_color' => '#3a0a46',
+      ],
+    ],
+    'set_3' => [
+      'title' => t('color_set_3'),
+      'name' => t('Combo 3'),
+      'colors' => [
+      'primary_color' => '#a24077',
+      'secondary_color' => '#000',
+      ],
+    ],
+    'set_4' => [
+      'title' => t('color_set_4'),
+      'name' => t('Combo 4'),
+      'colors' => [
+      'primary_color' => '#ffc604',
+      'secondary_color' => '#13152e',
+      ],
+    ],
+    'set_5' => [
+      'title' => t('color_set_5'),
+      'name' => t('Combo 5'),
+      'colors' => [
+      'primary_color' => '#153156',
+      'secondary_color' => '#FC8955',
+      ],
+    ],
+    'set_6' => [
+      'title' => t('color_set_6'),
+      'name' => t('Combo 6'),
+      'colors' => [
+      'primary_color' => '#c4832a',
+      'secondary_color' => '#26594c',
+      ],
+    ],
+    'set_7' => [
+      'title' => t('color_set_7'),
+      'name' => t('Combo 7'),
+      'colors' => [
+      'primary_color' => '#59cad1',
+      'secondary_color' => '#404040',
+      ],
+    ],
+    'set_8' => [
+      'title' => t('color_set_8'),
+      'name' => t('Combo 8'),
+      'colors' => [
+      'primary_color' => '#711c82',
+      'secondary_color' => '#00a9a7',
+      ],
+    ],
+    'set_9' => [
+      'title' => t('color_set_9'),
+      'name' => t('Combo 9'),
+      'colors' => [
+      'primary_color' => '#000',
+      'secondary_color' => '#a01a1a',
+      ],
+    ],
+    'set_10' => [
+      'title' => t('color_set_10'),
+      'name' => t('Combo 10'),
+      'colors' => [
+      'primary_color' => '#669be3',
+      'secondary_color' => '#404040',
+      ],
+    ],
+  ];
+  
+  $account = \Drupal::currentUser();
+  $roles = $account->getRoles();
+  foreach ($roles as $role) {
+    $variables['attributes']['class'][] = 'role-' . $role;
+  }
+}
+function agency_pro_preprocess_page(&$variables){
+  $variables['header_variation'] = theme_get_setting('header_variation');
+  $variables['default_color'] = theme_get_setting('default_color');
+  $variables['primary_color'] = theme_get_setting('primary_color');
+  $variables['secondary_color'] = theme_get_setting('secondary_color');
+  $variables['sticky'] = theme_get_setting('sticky');
+  $variables['loader'] = theme_get_setting('loader');
+  // Header Button
+  $variables['welcome_text'] = theme_get_setting('welcome_text');
+  // FOOTER SECTION
+  $variables['footer_logo'] = theme_get_setting('footer_logo');
+  $variables['copyrights'] = theme_get_setting('copyrights')['value'];
+  $variables['copyrights_link'] = theme_get_setting('copyrights_link');
+  $variables['copyrights_text'] = theme_get_setting('copyrights_text');
+  // SEARCH RESULT PAGE
+  $variables['search_banner_title'] = theme_get_setting('search_banner_title');
+ // 403 Page & 404 Page
+ $variables['page_403_banner_title'] = theme_get_setting('page_403_banner_title');
+ $variables['page_403_title'] = theme_get_setting('page_403_title');
+ $variables['page_403_message_title'] = theme_get_setting('page_403_message_title');
+ $variables['page_403_description'] = theme_get_setting('page_403_description');
+ $variables['page_403_button'] = theme_get_setting('page_403_button');
+ $variables['page_404_banner_title'] = theme_get_setting('page_404_banner_title');
+ $variables['page_404_title'] = theme_get_setting('page_404_title'); 
+ $variables['page_404_title_message'] = theme_get_setting('page_404_title_message');
+ $variables['page_404_description'] = theme_get_setting('page_404_description');
+ $variables['page_404_button'] = theme_get_setting('page_404_button');
+// CHECK SIDEBAR PRESENT OR NOT
+  if (!empty($variables['page']['sidebar_second'])) {
+    $variables['has_sidebar'] = 'one-sidebar';
+    // dpm($variables['has_sidebar']);
+  }
+   // Define {{ body_class }}  in the template.
+   if (!empty($variables['node']) && !empty($variables['node']->title )) {
+    $variables['title'] = $variables['node']->title->value;
+   
+  }
+  // CHECK SIDEBAR PRESENT OR NOT
+  // kint($variables['page']['content']['agency_pro_content']);
+  if(isset($variables['page']['sidebar_second'])){
+    $variables['check_sidebar']='true';
+    $variables['check_sidebar_status'] = 'has-sidebar';
+  }
+  else{
+    $variables['check_sidebar']='false';
+  }
+// kint($variables['page']);
+// kint($variables['page']['sidebar_second']);
+
+
+  // SEARCH BANNER IMAGE
+  $path = "";
+  if (!empty(theme_get_setting('search_banner_img'))) {
+    $fid = theme_get_setting('search_banner_img')[0];
+    if (!empty($fid)) {
+    $file =File::load($fid);
+    $path = Drupal::service('file_url_generator')->generateAbsoluteString($file->getFileUri());
+    }
+  }
+  $variables['search_banner_img'] = $path;  
+
+  //  403 IMAGE
+  $path = "";
+  if (!empty(theme_get_setting('page_403_img'))) {
+    $fid = theme_get_setting('page_403_img')[0];
+    if (!empty($fid)) {
+    $file =File::load($fid);
+    $path = Drupal::service('file_url_generator')->generateAbsoluteString($file->getFileUri());
+    }
+  }
+  $variables['img_path'] = $path;
+
+  // 403 BANNER IMAGE
+  $path = "";
+  if (!empty(theme_get_setting('page_403_banner_img'))) {
+    $fid = theme_get_setting('page_403_banner_img')[0];
+    if (!empty($fid)) {
+    $file =File::load($fid);
+    $path = Drupal::service('file_url_generator')->generateAbsoluteString($file->getFileUri());
+    }
+  }
+  $variables['access_denied_page_banner'] = $path;
+  //  404 IMAGE
+  $path = "";
+  if (!empty(theme_get_setting('page_404_img'))) {
+    $fid = theme_get_setting('page_404_img')[0];
+    if (!empty($fid)) {
+    $file =File::load($fid);
+    $path = Drupal::service('file_url_generator')->generateAbsoluteString($file->getFileUri());
+    }
+  }
+  $variables['error_img'] = $path;  $path = "";
+// 404 BANNER IMAGE
+  $path = "";
+  if (!empty(theme_get_setting('page_404_banner_img'))) {
+    $fid = theme_get_setting('page_404_banner_img')[0];
+    if (!empty($fid)) {
+    $file =File::load($fid);
+    $path = Drupal::service('file_url_generator')->generateAbsoluteString($file->getFileUri());
+    }
+  }
+  $variables['error_page_banner'] = $path;  $path = "";
+
+
+}
+
+
+function agency_pro_preprocess_paragraph(&$variables){
+  $paragraph = $variables['paragraph'];
+  $para = $variables['elements']['#paragraph'];
+  if($paragraph->bundle() == 'panel_content'){
+    $parent = $paragraph->getParentEntity();
+    if(isset($parent))
+      $variables['accordion_id'] = $parent->bundle();
+  }
+  if($paragraph->bundle() == 'faq_item'){
+    $parent = $paragraph->getParentEntity();
+    if(isset($parent))
+      $variables['faq_id'] = $parent->bundle();
+  }
+  // $para = Paragraph::load('progress_bar');
+  // $foo = $para->field_count->value;
+  // kint($variables['paragraph']);
+}
+/**
+ * Searh Result Page.
+ */
+function agency_pro_preprocess_item_list__search_results(&$variables) {
+  // Search Result count
+  $pager = \Drupal::service('pager.manager')->getPager();
+  if (!empty($pager)){
+    $count_results = $pager->getTotalItems();
+    $variables['total_items_count'] = $count_results;
+  }
+  else{
+    $variables['total_items_count'] = 0;
+  }
+  // Search Keyword
+  $current_path = \Drupal::request()->getpathInfo();
+  //echo $current_path;
+  if ($current_path == '/search/node') {
+    if (\Drupal::request()->query->has('keys')) {
+      $keywords = \Drupal::request()->query->get('keys');
+      $variables['keyword'] = $keywords;
+    }
+  }
+}
+
+// USER PAGES
+function agency_pro_theme(&$existing, $type, $theme, $path) {
+  $hooks = array();
+  $hooks['user_login_form'] = array(
+   'render element' => 'form',
+   'template' => 'user-login-form',
+   'preprocess functions' => array(
+      'agency_pro_preprocess_user_login'
+   ),
+  );
+  $hooks['user_register_form'] = array(
+   'render element' => 'form',
+   'template' => 'user-register-form',
+   'preprocess functions' => array(
+      'agency_pro_preprocess_user_register'
+   ),
+  );
+  $hooks['user_pass'] = array(
+   'render element' => 'form',
+   'template' => 'user-pass-form',
+   'preprocess functions' => array(
+      'agency_pro_preprocess_user_pass'
+   ),
+  );
+  return $hooks; 
+}
+
+// HOOK PREPROCESSOR USER LOGIN
+function agency_pro_preprocess_user_login(&$variables) {
+  $variables['login_banner_title'] = theme_get_setting('login_banner_title');
+  $variables['login_title'] = theme_get_setting('login_title');
+  $variables['login_name_description'] = theme_get_setting('login_name_description');
+  $variables['login_banner_img'] = theme_get_setting('login_banner_img');
+  $variables['login_password_description'] = theme_get_setting('login_password_description');
+  
+  $path = "";
+  if (!empty(theme_get_setting('login_banner_img'))) {
+    $fid = theme_get_setting('login_banner_img')[0];
+    if (!empty($fid)) {
+    $file =File::load($fid);
+    $path = Drupal::service('file_url_generator')->generateAbsoluteString($file->getFileUri());
+    }
+  }
+  $variables['login_banner_img'] = $path;
+}
+// HOOK PREPROCESSOR USER REGISTER
+function agency_pro_preprocess_user_register(&$variables) {
+  $variables['register_banner_title'] = theme_get_setting('register_banner_title');
+  $variables['register_title'] = theme_get_setting('register_title');
+  // $variables[''] = theme_get_setting('register_banner_img');
+  $path = "";
+  if (!empty(theme_get_setting('register_banner_img'))) {
+    $fid = theme_get_setting('register_banner_img')[0];
+    if (!empty($fid)) {
+    $file =File::load($fid);
+    $path = Drupal::service('file_url_generator')->generateAbsoluteString($file->getFileUri());
+    }
+  }
+  $variables['register_banner_img'] = $path;
+}
+// HOOK PREPROCESSOR USER FORGOT PASSWORD
+function agency_pro_preprocess_user_pass(&$variables) {
+  $variables['reset_banner_title'] = theme_get_setting('reset_banner_title');
+  $variables['reset_page_title'] = theme_get_setting('reset_page_title');
+  $path = "";
+  if (!empty(theme_get_setting('resetpassword_banner_img'))) {
+    $fid = theme_get_setting('resetpassword_banner_img')[0];
+    if (!empty($fid)) {
+    $file =File::load($fid);
+    $path = Drupal::service('file_url_generator')->generateAbsoluteString($file->getFileUri());
+    }
+  }
+  $variables['resetpassword_banner_img'] = $path;
+}
+// MAINTANENCE AND COMMING SOON PAGE
+function agency_pro_preprocess_maintenance_page(&$variables) {
+  $variables['mode_type'] = theme_get_setting('mode_type');
+  $variables['maintenance_mode_title'] = theme_get_setting('maintenance_mode_title');
+  $variables['maintenance_mode_description'] = theme_get_setting('maintenance_mode_description');
+  $variables['coming_soon_title'] = theme_get_setting('coming_soon_title');
+  $variables['coming_soon_description'] = theme_get_setting('coming_soon_description');
+  $variables['launch_date'] = theme_get_setting('launch_date'); 
+  $variables['launch_date'] = theme_get_setting('launch_date');
+  $variables['#attached'] = [  
+    'drupalSettings' => [
+        'custom_date' => $variables['custom_date'] = theme_get_setting('launch_date'),
+    ],
+  ];
+
+  
+   //  Maintenance Mode IMAGE
+  $path = "";
+  if (!empty(theme_get_setting('maintenance_img'))) {
+    $fid = theme_get_setting('maintenance_img')[0];
+    if (!empty($fid)) {
+    $file =File::load($fid);
+    $path = Drupal::service('file_url_generator')->generateAbsoluteString($file->getFileUri());
+    }
+  }
+  $variables['maintenance_image'] = $path;  $path = "";
+  $path = "";
+  if (!empty(theme_get_setting('maintenance_logo'))) {
+    $fid = theme_get_setting('maintenance_logo')[0];
+    if (!empty($fid)) {
+    $file =File::load($fid);
+    $path = Drupal::service('file_url_generator')->generateAbsoluteString($file->getFileUri());
+    }
+  }
+  $variables['maintenance_logo_img'] = $path;  $path = "";
+ 
+  //  Coming soon IMAGE
+  $path = "";
+  if (!empty(theme_get_setting('coming_soon_img'))) {
+    $fid = theme_get_setting('coming_soon_img')[0];
+    if (!empty($fid)) {
+    $file =File::load($fid);
+    $path = Drupal::service('file_url_generator')->generateAbsoluteString($file->getFileUri());
+    }
+  }
+  $variables['coming_soon_image'] = $path;  $path = "";
+ 
+  $path = "";
+  if (!empty(theme_get_setting('coming_soon_logo_img'))) {
+    $fid = theme_get_setting('coming_soon_logo_img')[0];
+    if (!empty($fid)) {
+      $file =File::load($fid);
+      $path = Drupal::service('file_url_generator')->generateAbsoluteString($file->getFileUri());
+    }
+  }
+  $variables['comingsoon_logo_img'] = $path;  $path = "";
+}
+/**
+* Implements hook_preprocess_node() for NODE document templates.
+*/
+
+function agency_pro_preprocess_node(&$variables){
+
+ 
+
+  //Prev Next
+  $block = \Drupal\block\Entity\Block::load('flippyblock');
+  $variables['flippy'] = \Drupal::entityTypeManager()
+  ->getViewBuilder('block')
+  ->view($block);
+
+
+  // Blog Comments
+  if ($variables['node']->getType() == 'blog') {
+    $variables['comment_count'] = $variables['node']->get('field_comments')->comment_count;
+  }
+  // CHECK SIDEBAR PRESENT OR NOT
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if ($node instanceof \Drupal\node\NodeInterface) {
+    // You can get nid and anything else you need from the node object.
+    $nid = $node;
+    // kint($nid);
+    // kint($nid);
+  }
+  $node = $variables['node'];
+  $node_type = $node->getType();
+  if ( ($node_type == 'portfolio') ) {
+    $start_date = $node->get('field_start_date')->getValue();
+    $start_date = $start_date[0]['value'];
+    $variables['start_date'] = date('F j, Y', strtotime($start_date));
+    $end_date = $node->get('field_end_date')->getValue();
+    $end_date = $end_date[0]['value'];
+    $variables['end_date'] = date('F j, Y', strtotime($end_date));
+  }
+
+
+}
+
+
+
+function agency_pro_preprocess_links__language_block(&$variables) {
+  $currentLanguageCode = \Drupal::languageManager()
+    ->getCurrentLanguage()
+    ->getId();
+  // replace key of active language with 'activeLink'
+  foreach ($variables['links'] as $i => $link) {
+    /** @var \Drupal\language\Entity\ConfigurableLanguage $linkLanguage */
+    $linkLanguage = $link['link']['#options']['language'];
+    if ($currentLanguageCode == $linkLanguage->get('id')) {
+      $variables['links']['activeLink'] = $link;
+      unset($variables['links'][$i]);
+    }
+  }
+  // if there is only 2 languages remove active one
+  if (sizeof($variables['links']) == 2) {
+    unset($variables['links']['activeLink']);
+    // give class 'btn btn-primary' to alternate language
+    /** @var \Drupal\Core\Url $alternate */
+    $alternate = current($variables['links']);
+    $variables['links'] = [$alternate];
+  }
+}
+
+
+function agency_pro_preprocess_paragraph__progress_item(&$vars) {
+  $paragraph = $vars['elements']['#paragraph'];
+  $count = $paragraph->get('field_count')->value;
+  $count = floatval($count);
+  $vars['count_value'] = $count*3.6;
+
+  $vars['delta'] = NULL;
+  foreach ($vars['paragraph']->getParentEntity()->field_progress_item->getValue() as $delta => $item) {
+    if ($item['target_id'] === $vars['paragraph']->id()) {
+      $vars['delta'] = $delta;
+      break;
+    }
+  }
+
+  // $paragraph = $vars['paragraph']->getParentEntity()->field_progress_item->getValue();
+  // $vars['delta'] = 'NULL';
+  // $vars['count'] = 'NULL';
+  // foreach ($vars['paragraph']->getParentEntity()->field_progress_item->getValue() as $delta => $item) {
+  //     //  kint($delta);
+  //   }
+  // $vars['delta'] = 'NULL';
+  // $vars['count'] = 'NULL';
+ 
+  // foreach ($vars['paragraph']->getParentEntity()->field_progress_item->getValue() as $delta => $item) {
+  //   if ($item['target_id'] === $vars['paragraph']->id()) {
+  //     $vars['delta'] = $delta;
+  //     // dpm(  $vars['delta']);
+  //     break;
+  //   }
+  // } 
+}
+// function agency_pro_preprocess_webform(&$variables) {
+//   if ($form_state->getFormObject() instanceof \Drupal\Core\Entity\EntityFormInterface) {
+//     $entity = $form_state->getFormObject()->getEntity();
+//     kint($entity);
+//   }
+// }
+function agency_pro_form_alter(array &$form, FormStateInterface $form_state, $form_id) {  
+  if ($form_id == 'webform-submission-contact-us-paragraph-224-add-form') {
+    $form['elements']['hearing_date']['#ajax'] = [
+      'callback'=>'fcc_check_date',
+      'wrapper' => 'submit-wrapper',
+      'event' => 'change'
+    ];
+    $form['elements']['walkthrough_request_date']['#ajax'] = [
+      'callback'=>'fcc_check_date',
+      'wrapper' => 'submit-wrapper',
+      'event' => 'change'
+    ];
+  }
+  if ( TRUE === in_array( $form_id, array( 'user_register_form') ) ) {
+    $form['account']['mail']['#attributes']['placeholder'] = t( 'Email *' );
+     $form['account']['name']['#attributes']['placeholder'] = t( 'User Name *' );
+  }
+  if ($form_id == 'user_login_form') {
+    $form['actions']['submit']['#value'] = t('LOGIN');
+    $form['actions']['submit']['#attributes']['class'][]='btn btn-primary btn-style-1 btn-style-lg';
+  }
+  if ($form_id == 'user_register_form') {
+    $form['actions']['submit']['#value'] = t('REGISTER');
+    $form['actions']['submit']['#attributes']['class'][]='btn btn-primary btn-style-1 btn-style-lg';
+  }
+  if ($form_id == 'user_pass') {
+    $form['name']['#placeholder'] = t('User Name or Email address *');
+    $form['actions']['submit']['#value'] = t('RESET');
+    $form['actions']['submit']['#attributes']['class'][]='btn btn-primary btn-style-1 btn-style-lg';
+  }
+}
+function agency_pro_form_user_login_form_alter(&$form, &$form_state, $form_id) {
+  $form['name']['#placeholder'] = t('User Name *');
+  $form['pass']['#placeholder'] = t('Password *');
+}
+function agency_pro_preprocess_taxonomy_term(&$variables) {
+  $variables['term'] = $variables['elements']['#taxonomy_term']->label();
+}
+function agency_pro_preprocess_page_title(&$variables) {
+  $node = \Drupal::request()->attributes->get('node');
+  if ($node && $node->hasField('field_category') && !$node->field_category->isEmpty()) {
+    $term = \Drupal\taxonomy\Entity\Term::load($node->get('field_category')->target_id);
+    $term_name = $term->getName();
+    $variables['term_name'] = $term->getName();
+  }
+  dpm( $variables['term_name']);
+}
+function agency_pro_preprocess_views_view_fields__blogs__block_7(&$vars) {
+  static $counter = 0;
+  $vars['counter'] = $counter++;
+}
+function agency_pro_preprocess_views_view_fields__blogs__block_9(&$vars) {
+  static $counter = 0;
+  $vars['counter'] = $counter++;
+}
+function agency_pro_form_comment_form_alter(&$form, &$form_state, $form_id) {
+  $form['subject']['widget']['#access'] = FALSE;
+  $form['actions']['submit']['#value'] = t('Post Comment');
+  $form['actions']['submit']['#attributes']['class'][] = 'btn btn-primary btn-style-1 btn-style-lg';
+  $form['actions']['preview']['#access'] = FALSE; 
+  $form['author']['#weight'] = -981;
+  $form['actions']['submit']['#weight'] = -1;
+  // dpm($form);
+}
+
+function agency_pro_library_info_alter(&$libraries, $ext){
+  unset($libraries['form']);
+}

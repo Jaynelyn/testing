@@ -1,0 +1,7 @@
+{% if content.field_counter_variant.0['#markup'] in 'counter1' %}
+    {% include '@agency_pro/paragraphs/counters/counter1.html.twig' %}
+{% elseif content.field_counter_variant.0['#markup'] in 'counter2'  %}
+    {% include '@agency_pro/paragraphs/counters/counter2.html.twig' %}
+{% else %}
+    {% include '@agency_pro/paragraphs/counters/counter3.html.twig' %}
+{% endif %}

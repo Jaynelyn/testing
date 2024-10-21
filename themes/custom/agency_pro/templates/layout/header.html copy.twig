@@ -1,0 +1,118 @@
+<!-- Header Start -->
+<header id="pt-header">
+    <div id="{{ header_variation }}" class="nav_header header_type header header-1 active">
+        <div class="topbar d-none d-lg-block">
+            <div class="container">
+                <div class="item">
+                    <span>{{welcome_text}}</span>
+                    <div class="language-dropdown-wrapper d-none d-lg-block">
+                        {% if page.top_header %}
+                            {{page.top_header}}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="navbar-wrapper">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg mx-auto">
+                    {% if page.logo %}
+                        {{page.logo}}
+                    {% endif %}
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav1" aria-controls="navbarNav1" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav1">
+                        {{page.primary_menu}}
+                        {% if page.header %}
+                            <div class="search-btn">
+                                <a class="btn"><i class="fa fa-search"></i></a>
+                                <form class="dropdown-menu search-overlay" action="{{base_path}}search/node" method="get">
+                                    <input type="text" placeholder="search Here.." name="keys">
+                                    <button type="submit"><i class="fa fa-search"></i></button>
+                                </form>
+                            </div>
+                        {% endif %}
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div id="{{ header_variation }}" class="nav_header header_type header header-3">
+        <div class="topbar d-none d-lg-block">
+            <div class="container">
+                <div class="item">
+                    <span>{{welcome_text}}</span>
+                    <div class="language-dropdown-wrapper d-none d-lg-block">
+                        {% if page.top_header %}
+                            {{page.top_header}}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="navbar-wrapper">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg mx-auto">
+                    {% if page.logo %}
+                        {{page.logo}}
+                    {% endif %}
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav1" aria-controls="navbarNav1" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav1">
+                        {{page.primary_menu}}
+                        {% if page.header %}
+                            <div class="search-btn">
+                                <a class="btn"><i class="fa fa-search"></i></a>
+                                <form class="dropdown-menu search-overlay" action="{{base_path}}search/node" method="get">
+                                    <input type="text" placeholder="search Here.." name="keys">
+                                    <button type="submit"><i class="fa fa-search"></i></button>
+                                </form>
+                            </div>
+                        {% endif %}
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <div id="{{ header_variation }}" class="nav_header header_type header header-3">
+        <div class="topbar d-none d-lg-block">
+            <div class="container">
+                <div class="item">
+                    <span>{{welcome_text}}</span>
+                    <div class="language-dropdown-wrapper d-none d-lg-block">
+                        {% if page.top_header %}
+                            {{page.top_header}}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="navbar-wrapper">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg mx-auto">
+                    {% if page.logo %}
+                        {{page.logo}}
+                    {% endif %}
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav1" aria-controls="navbarNav1" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav1">
+                        {{page.primary_menu}}
+                        {% if page.header %}
+                            <div class="search-btn">
+                                <a class="btn"><i class="fa fa-search"></i></a>
+                                <form class="dropdown-menu search-overlay" action="{{base_path}}search/node" method="get">
+                                    <input type="text" placeholder="search Here.." name="keys">
+                                    <button type="submit"><i class="fa fa-search"></i></button>
+                                </form>
+                            </div>
+                        {% endif %}
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+

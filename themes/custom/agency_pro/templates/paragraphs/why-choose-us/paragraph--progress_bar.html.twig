@@ -1,0 +1,5 @@
+{% if content.field_progress_bar_variant.0['#markup'] in 'list-style' %}
+    {% include '@agency_pro/paragraphs/why-choose-us/list-style.html.twig' %}
+{% else %}
+    {% include '@agency_pro/paragraphs/why-choose-us/circle-style.html.twig' %}
+{% endif %}

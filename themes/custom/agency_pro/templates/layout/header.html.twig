@@ -1,0 +1,346 @@
+<!-- Header Start -->
+<header id="pt-header">
+    <div id="{{ header_variation }}" class="nav_header">
+        <div class="header_type header header-1 {{active_1}}">
+            <div class="topbar d-none d-lg-block">
+                <div class="container">
+                    <div class="item">
+                        <span>{{welcome_text}}</span>
+                        {% if page.top_header %}
+                            {{page.top_header}}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>            
+            {% if sticky == 1 %}
+            <div class="navbar-wrapper navigation-sticky responsive-sticky">
+            {% else %}
+            <div class="navbar-wrapper responsive-sticky">
+            {% endif %}
+                <div class="container">
+                <nav class="navbar navbar-expand-lg mx-auto navbar-light">
+                <div class="res-header">
+                    {% if page.logo %}
+                        {{page.logo}}
+                    {% endif %}
+                    <div class="header-right">
+                        {% if page.top_header %}
+                            <div class="top-header top-header-lang d-none">
+                                {{page.top_header}}
+                            </div>
+                        {% endif %}
+                        <a href="javascript:void(0);" class="hamburger-btn d-none d-lg-block" title="Hamburger Menu" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+                                <g data-name="Group 38609" transform="translate(-1736 -87)">
+                                    <g data-name="Group 142" transform="translate(8)">
+                                    <rect data-name="Rectangle 77" width="30" height="30" rx="15" transform="translate(1728 87)" fill="#ee8d5a" opacity="0.25"></rect>
+                                    <g data-name="Group 141" transform="translate(1)">
+                                        <rect data-name="Rectangle 78" width="4" height="4" rx="2" transform="translate(1732 100)" fill="#ee8d5a"></rect>
+                                        <rect data-name="Rectangle 79" width="4" height="4" rx="2" transform="translate(1740 100)" fill="#ee8d5a"></rect>
+                                        <rect data-name="Rectangle 80" width="4" height="4" rx="2" transform="translate(1748 100)" fill="#ee8d5a"></rect>
+                                    </g>
+                                    </g>
+                                </g>
+                            </svg>
+					    </a>
+                        {% if page.header %}
+                            <div class="header-search-btn d-none">
+                                <a class="btn">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16.023" height="16.023" viewBox="0 0 16.023 16.023">
+                                        <g id="Icon_feather-search1" data-name="Icon feather-search" transform="translate(-3.75 -3.75)">
+                                            <path data-name="Path 327" d="M16.974,10.737A6.237,6.237,0,1,1,10.737,4.5,6.237,6.237,0,0,1,16.974,10.737Z" transform="translate(0 0)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                                            <path data-name="Path 328" d="M28.294,28.294l-3.319-3.319" transform="translate(-9.794 -9.794)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+                                        </g>
+                                    </svg>
+                                </a>
+                                <form class="agency-search-form" action="{{base_path}}search/node" method="get">
+                                    <input type="text" placeholder="Search Here..." name="keys">
+                                    <button type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16.023" height="16.023" viewBox="0 0 16.023 16.023">
+                                    <g id="Icon_feather-search2" data-name="Icon feather-search" transform="translate(-3.75 -3.75)">
+                                        <path data-name="Path 327" d="M16.974,10.737A6.237,6.237,0,1,1,10.737,4.5,6.237,6.237,0,0,1,16.974,10.737Z" transform="translate(0 0)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                                        <path data-name="Path 328" d="M28.294,28.294l-3.319-3.319" transform="translate(-9.794 -9.794)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+                                    </g>
+                                </svg></button>
+                                </form>
+                            </div>
+                        {% endif %}
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav1" aria-controls="navbarNav1" aria-expanded="false" aria-label="Toggle navigation">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+                    <div class="collapse navbar-collapse" id="navbarNav1">
+                        {{page.primary_menu}}
+                        <a href="javascript:void(0);" class="hamburger-btn d-none d-lg-block" title="Hamburger Menu" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+                                <g data-name="Group 38609" transform="translate(-1736 -87)">
+                                    <g data-name="Group 142" transform="translate(8)">
+                                    <rect data-name="Rectangle 77" width="30" height="30" rx="15" transform="translate(1728 87)" fill="#ee8d5a" opacity="0.25"></rect>
+                                    <g data-name="Group 141" transform="translate(1)">
+                                        <rect data-name="Rectangle 78" width="4" height="4" rx="2" transform="translate(1732 100)" fill="#ee8d5a"></rect>
+                                        <rect data-name="Rectangle 79" width="4" height="4" rx="2" transform="translate(1740 100)" fill="#ee8d5a"></rect>
+                                        <rect data-name="Rectangle 80" width="4" height="4" rx="2" transform="translate(1748 100)" fill="#ee8d5a"></rect>
+                                    </g>
+                                    </g>
+                                </g>
+                            </svg>
+					    </a>
+                        {% if page.header %}
+                            <div class="search-btn">
+                                <a class="btn"><svg xmlns="http://www.w3.org/2000/svg" width="16.023" height="16.023" viewBox="0 0 16.023 16.023">
+									<g data-name="Icon feather-search" transform="translate(-3.75 -3.75)">
+										<path data-name="Path 327" d="M16.974,10.737A6.237,6.237,0,1,1,10.737,4.5,6.237,6.237,0,0,1,16.974,10.737Z" transform="translate(0 0)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+										<path data-name="Path 328" d="M28.294,28.294l-3.319-3.319" transform="translate(-9.794 -9.794)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+									</g>
+								</svg></a>
+                                <form class="dropdown-menu search-overlay" action="{{base_path}}search/node" method="get">
+                                    <input type="text" placeholder="Search Here..." name="keys">
+                                    <button type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16.023" height="16.023" viewBox="0 0 16.023 16.023">
+									<g id="Icon_feather-search3" data-name="Icon feather-search" transform="translate(-3.75 -3.75)">
+										<path data-name="Path 327" d="M16.974,10.737A6.237,6.237,0,1,1,10.737,4.5,6.237,6.237,0,0,1,16.974,10.737Z" transform="translate(0 0)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+										<path data-name="Path 328" d="M28.294,28.294l-3.319-3.319" transform="translate(-9.794 -9.794)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+									</g>
+								</svg></button>
+                                </form>
+                            </div>
+                        {% endif %}
+                    </div>
+                </nav>
+                </div>
+            </div>
+        </div>
+        <div class="header_type header header-2 {{active_2}}">         
+            {% if sticky == 1 %}
+            <div class="navbar-wrapper navigation-sticky responsive-sticky">
+            {% else %}
+            <div class="navbar-wrapper responsive-sticky">
+            {% endif %}
+                <div class="container">
+                <nav class="navbar navbar-expand-lg mx-auto navbar-light">
+                <div class="res-header">
+                    {% if page.logo %}
+                        {{page.logo}}
+                    {% endif %}
+                    <div class="header-right">
+                    {% if page.top_header %}
+                        <div class="top-header top-header-lang d-none">
+                            {{page.top_header}}
+                        </div>
+                    {% endif %}
+                    <a href="javascript:void(0);" class="hamburger-btn d-none d-lg-block" title="Hamburger Menu" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+                            <g  data-name="Group 38609" transform="translate(13390 19655)">
+                                <rect  data-name="Rectangle 77" width="30" height="30" rx="15" transform="translate(-13390 -19655)" fill="#ee8d5a"></rect>
+                                <g  data-name="Group 37934" transform="translate(1)">
+                                <rect  data-name="Rectangle 1765" width="14" height="2" transform="translate(-13383 -19645)" fill="#fff"></rect>
+                                <rect  data-name="Rectangle 1766" width="14" height="2" transform="translate(-13383 -19637)" fill="#fff"></rect>
+                                </g>
+                            </g>
+                        </svg>
+                    </a>
+                    {% if page.header %}
+                        <div class="header-search-btn d-none">
+                            <a class="btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16.023" height="16.023" viewBox="0 0 16.023 16.023">
+                                    <g id="Icon_feather-search5" data-name="Icon feather-search" transform="translate(-3.75 -3.75)">
+                                        <path data-name="Path 327" d="M16.974,10.737A6.237,6.237,0,1,1,10.737,4.5,6.237,6.237,0,0,1,16.974,10.737Z" transform="translate(0 0)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                                        <path data-name="Path 328" d="M28.294,28.294l-3.319-3.319" transform="translate(-9.794 -9.794)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+                                    </g>
+                                </svg>
+                            </a>
+                            <form class="agency-search-form" action="{{base_path}}search/node" method="get">
+                                <input type="text" placeholder="Search Here..." name="keys">
+                                <button type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16.023" height="16.023" viewBox="0 0 16.023 16.023">
+                                <g id="Icon_feather-search6" data-name="Icon feather-search" transform="translate(-3.75 -3.75)">
+                                    <path data-name="Path 327" d="M16.974,10.737A6.237,6.237,0,1,1,10.737,4.5,6.237,6.237,0,0,1,16.974,10.737Z" transform="translate(0 0)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                                    <path data-name="Path 328" d="M28.294,28.294l-3.319-3.319" transform="translate(-9.794 -9.794)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+                                </g>
+                            </svg></button>
+                            </form>
+                        </div>
+                    {% endif %}
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav2" aria-controls="navbarNav2" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+                </div>
+                    <div class="collapse navbar-collapse" id="navbarNav2">
+                        {{page.primary_menu}}
+                        <div class="search-lang-ham">
+                            <a href="javascript:void(0);" class="hamburger-btn d-none d-lg-block" title="Hamburger Menu" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+                                    <g  data-name="Group 38609" transform="translate(13390 19655)">
+                                        <rect data-name="Rectangle 77" width="30" height="30" rx="15" transform="translate(-13390 -19655)" fill="#ee8d5a"></rect>
+                                        <g data-name="Group 37934" transform="translate(1)">
+                                        <rect data-name="Rectangle 1765" width="14" height="2" transform="translate(-13383 -19645)" fill="#fff"></rect>
+                                        <rect data-name="Rectangle 1766" width="14" height="2" transform="translate(-13383 -19637)" fill="#fff"></rect>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </a>
+                            {% if page.header %}
+                                <ul class="search-btn d-none d-lg-block">
+                                    <li class="dropdown">
+                                        <a href="javascript:void(0);" class="btn">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="27.414" height="27.414" viewBox="0 0 27.414 27.414">
+                                                <g data-name="Icon feather-search" transform="translate(-3.5 -3.5)">
+                                                    <path data-name="Path 35" d="M26.744,15.622A11.122,11.122,0,1,1,15.622,4.5,11.122,11.122,0,0,1,26.744,15.622Z" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                                    <path data-name="Path 36" d="M30.97,30.97l-5.995-5.995" transform="translate(-1.47 -1.47)" fill="#000" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                                </g>
+                                            </svg>
+                                        </a>
+                                        <div class="dropdown-menu search-overlay">
+                                            <form action="{{base_path}}search/node" method="get">
+                                                <input type="text" placeholder="search Here..." name="keys">
+                                                <button type="submit">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="27.414" height="27.414" viewBox="0 0 27.414 27.414">
+                                                        <g data-name="Icon feather-search" transform="translate(-3.5 -3.5)">
+                                                            <path data-name="Path 35" d="M26.744,15.622A11.122,11.122,0,1,1,15.622,4.5,11.122,11.122,0,0,1,26.744,15.622Z" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                                            <path data-name="Path 36" d="M30.97,30.97l-5.995-5.995" transform="translate(-1.47 -1.47)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                                        </g>
+                                                    </svg>
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </li>
+                                </ul>
+                            {% endif %}
+                        </div>
+                    </div>
+                </nav>
+                </div>
+            </div>
+        </div>
+        <div class="header_type header header-3 {{active_3}}">         
+            {% if sticky == 1 %}
+            <div class="navbar-wrapper navigation-sticky responsive-sticky">
+            {% else %}
+            <div class="navbar-wrapper responsive-sticky">
+            {% endif %}
+                <div class="container">
+                <nav class="navbar navbar-expand-lg mx-auto navbar-light">
+                <div class="res-header">
+                    {% if page.logo %}
+                        {{page.logo}}
+                    {% endif %}
+                    <div class="header-right">
+                    {% if page.top_header %}
+                        <div class="top-header top-header-lang d-none">
+                            {{page.top_header}}
+                        </div>
+                    {% endif %}
+                    <a href="javascript:void(0);" class="hamburger-btn d-none d-lg-block" title="Hamburger Menu" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+                            <g data-name="Group 38609" transform="translate(-1736 -87)">
+                                <g data-name="Group 142" transform="translate(8)">
+                                <rect data-name="Rectangle 77" width="30" height="30" rx="15" transform="translate(1728 87)" fill="transparent" opacity="0.25"></rect>
+                                <g data-name="Group 141" transform="translate(1)">
+                                    <rect data-name="Rectangle 78" width="4" height="4" rx="2" transform="translate(1732 100)" fill="#ee8d5a"></rect>
+                                    <rect data-name="Rectangle 79" width="4" height="4" rx="2" transform="translate(1740 100)" fill="#ee8d5a"></rect>
+                                    <rect data-name="Rectangle 80" width="4" height="4" rx="2" transform="translate(1748 100)" fill="#ee8d5a"></rect>
+                                </g>
+                                </g>
+                            </g>
+                        </svg>
+                    </a>
+                    {% if page.header %}
+                        <div class="header-search-btn d-none">
+                            <a class="btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16.023" height="16.023" viewBox="0 0 16.023 16.023">
+                                    <g id="Icon_feather-search8" data-name="Icon feather-search" transform="translate(-3.75 -3.75)">
+                                        <path data-name="Path 327" d="M16.974,10.737A6.237,6.237,0,1,1,10.737,4.5,6.237,6.237,0,0,1,16.974,10.737Z" transform="translate(0 0)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                                        <path data-name="Path 328" d="M28.294,28.294l-3.319-3.319" transform="translate(-9.794 -9.794)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+                                    </g>
+                                </svg>
+                            </a>
+                            <form class="agency-search-form" action="{{base_path}}search/node" method="get">
+                                <input type="text" placeholder="Search Here..." name="keys">
+                                <button type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16.023" height="16.023" viewBox="0 0 16.023 16.023">
+                                <g id="Icon_feather-search9" data-name="Icon feather-search" transform="translate(-3.75 -3.75)">
+                                    <path data-name="Path 327" d="M16.974,10.737A6.237,6.237,0,1,1,10.737,4.5,6.237,6.237,0,0,1,16.974,10.737Z" transform="translate(0 0)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+                                    <path data-name="Path 328" d="M28.294,28.294l-3.319-3.319" transform="translate(-9.794 -9.794)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></path>
+                                </g>
+                            </svg></button>
+                            </form>
+                        </div>
+                    {% endif %}
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav3" aria-controls="navbarNav3" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+                </div>
+                    <div class="collapse navbar-collapse" id="navbarNav3">
+                        {{page.primary_menu}}
+                        <div class="search-lang-ham">
+                            <a href="javascript:void(0);" class="hamburger-btn d-none d-lg-block" title="Hamburger Menu" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
+                               <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+                                    <g data-name="Group 38609" transform="translate(-1736 -87)">
+                                        <g data-name="Group 142" transform="translate(8)">
+                                        <rect data-name="Rectangle 77" width="30" height="30" rx="15" transform="translate(1728 87)" fill="transparent" opacity="0.25"></rect>
+                                        <g data-name="Group 141" transform="translate(1)">
+                                            <rect data-name="Rectangle 78" width="4" height="4" rx="2" transform="translate(1732 100)" fill="#ee8d5a"></rect>
+                                            <rect data-name="Rectangle 79" width="4" height="4" rx="2" transform="translate(1740 100)" fill="#ee8d5a"></rect>
+                                            <rect data-name="Rectangle 80" width="4" height="4" rx="2" transform="translate(1748 100)" fill="#ee8d5a"></rect>
+                                        </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </a>
+                            {% if page.top_header %}
+                                <ul class="lang-dropdown-menu">
+                                    <li>{{page.top_header}}</li>
+                                </ul>
+                            {% endif %}
+                            {% if page.header %}
+                                <ul class="search-btn d-none d-lg-block">
+                                    <li class="dropdown">
+                                        <a href="javascript:void(0);" class="btn">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="27.414" height="27.414" viewBox="0 0 27.414 27.414">
+                                                <g data-name="Icon feather-search" transform="translate(-3.5 -3.5)">
+                                                    <path data-name="Path 35" d="M26.744,15.622A11.122,11.122,0,1,1,15.622,4.5,11.122,11.122,0,0,1,26.744,15.622Z" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                                    <path data-name="Path 36" d="M30.97,30.97l-5.995-5.995" transform="translate(-1.47 -1.47)" fill="#000" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                                </g>
+                                            </svg>
+                                        </a>
+                                        <div class="dropdown-menu search-overlay">
+                                            <form action="{{base_path}}search/node" method="get">
+                                                <input type="text" placeholder="search Here..." name="keys">
+                                                <button type="submit">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="27.414" height="27.414" viewBox="0 0 27.414 27.414">
+                                                        <g data-name="Icon feather-search" transform="translate(-3.5 -3.5)">
+                                                            <path data-name="Path 35" d="M26.744,15.622A11.122,11.122,0,1,1,15.622,4.5,11.122,11.122,0,0,1,26.744,15.622Z" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                                            <path data-name="Path 36" d="M30.97,30.97l-5.995-5.995" transform="translate(-1.47 -1.47)" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+                                                        </g>
+                                                    </svg>
+                                                </button>
+                                            </form>
+                                        </div>
+                                    </li>
+                                </ul>
+                            {% endif %}
+                        </div>
+                    </div>
+                </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRight">
+  {# <div class="offcanvas-header"> #}
+  {# </div> #}
+  <div class="offcanvas-body">
+    <div class="hamburger-menu ">
+        <div class="hamburger-item">
+            <a href="javascript:void(0);" class="hamburger-btn" title="Hamburger Menu" data-bs-dismiss="offcanvas" aria-label="Close">
+                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 752 752" height="60px" width="60px">
+                    <path d="m492.33 263.85c-8.3164-8.3203-21.816-8.3203-30.133 0.007813l-85.809 85.852-85.805-85.848c-8.332-8.3359-21.824-8.332-30.133-0.007813-8.3242 8.3242-8.332 21.812-0.007813 30.133l85.82 85.867-85.824 85.863c-8.3203 8.3203-8.3164 21.812 0.007812 30.133 4.1562 4.1641 9.6094 6.2383 15.066 6.2383s10.918-2.0781 15.074-6.2461l85.805-85.852 85.801 85.859c4.1641 4.168 9.6133 6.2461 15.074 6.2461 5.4492 0 10.906-2.0781 15.066-6.2383 8.3242-8.3203 8.332-21.812 0.007813-30.133l-85.832-85.871 85.828-85.871c8.3203-8.3164 8.3164-21.809-0.007813-30.133z"></path>
+                </svg>
+                {# <svg class="svg-inline--fa fa-times fa-w-11" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="times" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512" data-fa-i2svg=""><path fill="currentColor" d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z"></path></svg><!-- <i class="fas fa-times"></i> Font Awesome fontawesome.com --> #}
+            </a>
+            {# <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button> #}
+            {{ page.offcanvas }}
+        </div>
+    </div>
+  </div>
+</div>

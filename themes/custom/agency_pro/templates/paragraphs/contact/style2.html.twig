@@ -1,0 +1,17 @@
+<section class="contact-style-2 contact-3" data-aos="fade-up">
+    <div class="row">
+        <div class="col-lg-6 col-md-12 col-12">
+            <div class="image">
+                <img class="img-fluid" src="{{ file_url(content.field_image['#items'].entity.uri.value)}}" alt="{{ content.field_image['#items'].alt }}" title="{{ content.field_image['#items'].title }}">
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-12 col-12">
+            <div class="contact-form dt-section" style="background-image: url({{ content.field_background_image.0 }});">
+                <div class="form-style-2">
+                    <h2>{{ content.field_title.0 }}</h2>
+                     {{ content.field_contact_form }}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

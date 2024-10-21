@@ -1,0 +1,60 @@
+{% set base_url = url('<front>')  %}
+<!-- Register Page banner -->
+{% if register_banner_title %}
+<section class="page-banner" style="background-image: url({{register_banner_img}});">
+    <div class="container dt-section">
+        <div class="heading">
+            <h1>{{register_banner_title}}</h1>
+        </div>
+    </div>
+</section>
+<nav class="breadcrumb-section" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">HOME</a></li>
+        <li class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="39.932" height="37.846" viewBox="0 0 39.932 37.846">
+                <g class="Group_38512" data-name="Group 38512" transform="translate(39.932) rotate(90)">
+                    <path id="Icon_ionic-ios-arrow-back" data-name="Icon ionic-ios-arrow-back" d="M16.156,18.918.849,4.609A2.572,2.572,0,0,1,.849.79a3.048,3.048,0,0,1,4.095,0L22.286,17a2.575,2.575,0,0,1,.084,3.729L4.956,37.057a3,3,0,0,1-2.047.789,3,3,0,0,1-2.047-.789,2.572,2.572,0,0,1,0-3.819Z" transform="translate(0 39.932) rotate(-90)" fill="#fff"/>
+                    <path id="Icon_ionic-ios-arrow-back-2" data-name="Icon ionic-ios-arrow-back" d="M16.156,18.918.849,4.609A2.572,2.572,0,0,1,.849.79a3.048,3.048,0,0,1,4.095,0L22.286,17a2.575,2.575,0,0,1,.084,3.729L4.956,37.057a3,3,0,0,1-2.047.789,3,3,0,0,1-2.047-.789,2.572,2.572,0,0,1,0-3.819Z" transform="translate(0 23.128) rotate(-90)" fill="#fff"/>
+                </g>
+            </svg>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">{{register_banner_title}}</li>
+    </ol>
+</nav>
+{% endif %}
+<!-- Register Page -->
+<section class="sign-up dt-section" data-aos="zoom-in-down">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-10 col-12">
+                <div class="item">
+                    <div class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30.502" height="32.512" viewBox="0 0 30.502 32.512">
+                            <g id="noun_person_3747970" transform="translate(0.252 0.25)">
+                                <path id="Path_2532" data-name="Path 2532" d="M25.88,23.731a9.152,9.152,0,0,0,5.9-10.249,9.473,9.473,0,0,0-18.539,0,9.152,9.152,0,0,0,5.9,10.249A14.878,14.878,0,0,0,7.519,36.881a.956.956,0,0,0,.4.9,1.013,1.013,0,0,0,1,.09.967.967,0,0,0,.567-.812h0a12.924,12.924,0,0,1,13.02-11.775,12.924,12.924,0,0,1,13.02,11.775.982.982,0,0,0,.983.887H36.6a.992.992,0,0,0,.678-.333.942.942,0,0,0,.232-.7A14.877,14.877,0,0,0,25.88,23.731ZM15.071,15.156a7.445,7.445,0,0,1,14.885.012,7.445,7.445,0,0,1-14.885-.012Z" transform="translate(-7.512 -5.963)" fill="#FFF" stroke="#FFF" stroke-width="0.5"/>
+                            </g>
+                        </svg>
+                    </div>
+                    <div class="sign-up-form">
+                        {# <form> #}
+                            <h2>{{ register_title }}</h2>
+                            <div class="form-group">
+                                {{ form.account.mail }}
+                            </div>
+                            <div class="form-group">
+                                {{ form.account.name }}
+                            </div>
+                            <div class="sign-up-btn">
+                                {{ form.actions }}
+                                <a href="{{base_url}}user/login" class="login-link" title="Login">Already Have an Account? <span>Login</span></a>
+                            </div>
+                        {# </form> #}
+                        {{ form.form_build_id }}
+                        {{ form.form_id }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

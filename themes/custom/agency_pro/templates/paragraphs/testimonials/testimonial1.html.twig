@@ -1,0 +1,17 @@
+<section class="dt-section" style="background-image: url('{{ content.field_background_image.0 }}');" data-aos="fade-up">
+    <div class="testimonials-1">
+        <div class="container">
+        {% if content.field_tagline.0 or content.field_title.0 %}
+            <div class="home-1-title">
+                {% if  content.field_tagline.0 %}
+                    <span>{{ content.field_tagline.0 }}</span>
+                {% endif %}
+                {% if content.field_title.0 %}
+                    <h2>{{ content.field_title.0 }}</h2>
+                {% endif %}
+            </div>
+        {% endif %}
+            {{ content.field_testimonials }}
+        </div>
+    </div>
+</section>

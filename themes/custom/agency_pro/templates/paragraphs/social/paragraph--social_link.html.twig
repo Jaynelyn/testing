@@ -1,0 +1,14 @@
+{% set paragraph_parent = paragraph.getParentEntity() %}
+{% set varient = paragraph_parent.field_social_links_variant.value %}
+{% set foo = 'slider2' %}
+    {% if foo in varient %}
+        <a class="{{ varient }}" href="{{ content.field_link.0['#url'] }}" title ="{{ content.field_link.0['#title'] }}" target="_blank">
+           {{ content.field_link.0['#title'] }}
+        </a>
+    {% else %}
+        <li>
+            <a href="{{ content.field_link.0['#url'] }}" title ="{{ content.field_link.0['#title'] }}"  target="_blank">
+                {{ content.field_social_icon.0 }}
+            </a>
+        </li>
+    {% endif %}

@@ -1,0 +1,7 @@
+{% if content.field_why_choose_us_variant.0['#markup'] in 'whychoose1' %}
+    {% include '@agency_pro/paragraphs/why-choose-us/whychoose1.html.twig' %}
+{% elseif content.field_why_choose_us_variant.0['#markup'] in 'whychoose2' %}
+    {% include '@agency_pro/paragraphs/why-choose-us/whychoose2.html.twig' %}
+{% else %}
+    {% include '@agency_pro/paragraphs/why-choose-us/whychoose3.html.twig' %}
+{% endif %}

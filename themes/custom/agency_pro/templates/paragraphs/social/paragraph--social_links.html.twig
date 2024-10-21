@@ -1,0 +1,9 @@
+{% if content.field_social_links_variant.0['#markup'] in 'offcanvas' %}
+    {% include '@agency_pro/paragraphs/social/social_offcanvas.html.twig' %}
+{% elseif content.field_social_links_variant.0['#markup'] in 'slider' %}
+    {% include '@agency_pro/paragraphs/social/social_slider.html.twig' %}
+{% elseif content.field_social_links_variant.0['#markup'] in 'slider2' %}
+    {% include '@agency_pro/paragraphs/social/social_slider2.html.twig' %}
+{% elseif content.field_social_links_variant.0['#markup'] in 'slider3' %}
+    {% include '@agency_pro/paragraphs/social/social_slider3.html.twig' %}
+{% endif %}

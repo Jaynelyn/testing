@@ -1,0 +1,9 @@
+{% if content.field_client.0.contents['#display_id'] in 'block_3' %}
+    {% include '@agency_pro/paragraphs/clients/client3.html.twig' %}
+{% elseif content.field_client.0.contents['#display_id'] in 'block_1' %}
+    {% include '@agency_pro/paragraphs/clients/client2.html.twig' %}
+{% elseif content.field_client.0.contents['#display_id'] in 'block_2' %}
+    {% include '@agency_pro/paragraphs/clients/client1.html.twig' %}
+{% else %}
+    {% include '@agency_pro/paragraphs/clients/client1.html.twig' %}
+{% endif %}

@@ -1,0 +1,14 @@
+{% if content.field_list_variant.0['#markup'] in 'list2' %}
+    <ul class="list-style-1">
+        {{ content.field_list }}
+    </ul>
+{% elseif content.field_list_variant.0['#markup'] in 'list3' %}
+        <ul>
+            {{ content.field_list }}
+        </ul>
+{% else %}
+    <ul class="list-style-2 home-lists">
+        {{ content.field_list }}
+    </ul>
+{% endif %}
+

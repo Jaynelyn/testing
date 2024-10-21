@@ -1,0 +1,7 @@
+<li data-aos="zoom-in-up" data-aos-duration="1000">
+    <a href="{{fields.view_taxonomy_term.content }}" class="{{ fields.name.content}}">{{ fields.name.content}}
+        {% if fields.count.content  %}
+            <span>{{'('}}{{fields.count.content }}{{')'}}</span>
+        {% endif %}
+    </a>
+</li>

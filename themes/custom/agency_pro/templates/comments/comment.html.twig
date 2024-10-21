@@ -1,0 +1,81 @@
+
+{% set base_url = url('<front>')  %}
+ {%
+  set classes = [
+    'comment',
+    'js-comment',
+    status != 'published' ? 'comment--' ~ status,
+    comment.owner.anonymous ? 'by-anonymous',
+    author_id and author_id == commented_entity.getOwnerId() ? 'by-' ~ commented_entity.getEntityTypeId() ~ '-author',
+    'clearfix',
+  ]
+%}
+{% if logged_in %}
+    <div class="container comments">
+        {% if parent %}
+            <div class="ps-5 list">
+                <div class="image">
+                    {% if user_picture['#user'].user_picture.entity.uri.0.value %}
+                    <img src="{{ file_url(user_picture['#user'].user_picture.entity.uri.0.value) }}" alt="{{ comment.getOwner.name.value }}">
+                    {% else %}
+                    <img src="{{base_url}}/themes/custom/agency_pro/assets/user.jpeg" alt="{{ comment.getOwner.name.value }}">
+                    {% endif %}
+                </div>
+                <div class="details">
+                    <h5>{{ comment.getOwner.name.value }}</h5>
+                    <h6>{{ created_time|date('F d, Y') }}</h6>
+                    {{ content.field_agency_pro_comment.0  }}
+                    <nav>{{ content.links }}</nav>
+                </div>
+            </div>
+        {% else %}
+            <div class="list">
+                <div class="image">
+                    {% if user_picture['#user'].user_picture.entity.uri.0.value %}
+                    <img src="{{ file_url(user_picture['#user'].user_picture.entity.uri.0.value) }}" alt="{{ comment.getOwner.name.value }}">
+                    {% else %}
+                    <img src="{{base_url}}/themes/custom/agency_pro/assets/user.jpeg" alt="{{ comment.getOwner.name.value }}">
+                    {% endif %}
+                </div>
+                <div class="details">
+                    <h5>{{ comment.getOwner.name.value }}</h5>
+                    <h6>{{ created_time|date('F d, Y') }}</h6>
+                    {{ content.field_agency_pro_comment.0  }}
+                    <nav>{{ content.links }}</nav>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+{% else %}
+  {% if parent %}
+        <div class="ps-5 list">
+            <div class="image">
+                {% if user_picture['#user'].user_picture.entity.uri.0.value %}
+                <img src="{{ file_url(user_picture['#user'].user_picture.entity.uri.0.value) }}" alt="{{ comment.getOwner.name.value }}">
+                {% else %}
+                <img src="{{base_url}}/themes/custom/agency_pro/assets/user.jpeg" alt="{{ comment.getOwner.name.value }}">
+                {% endif %}
+            </div>
+            <div class="details">
+                <h5>{{ comment.getOwner.name.value }}</h5>
+                <h6>{{ created_time|date('F d, Y') }}</h6>
+                {{ content.field_agency_pro_comment.0  }}
+            </div>
+        </div>
+  {% else %}
+        <div class="list">
+            <div class="image">
+                {% if user_picture['#user'].user_picture.entity.uri.0.value %}
+                <img src="{{ file_url(user_picture['#user'].user_picture.entity.uri.0.value) }}" alt="{{ comment.getOwner.name.value }}">
+                {% else %}
+                <img src="{{base_url}}/themes/custom/agency_pro/assets/user.jpeg" alt="{{ comment.getOwner.name.value }}">
+                {% endif %}
+            </div>
+            <div class="details">
+                <h5>{{ comment.getOwner.name.value }}</h5>
+                <h6>{{ created_time|date('F d, Y') }}</h6>
+                {{ content.field_agency_pro_comment.0  }}
+            </div>
+        </div>
+  {% endif %}
+{% endif %}

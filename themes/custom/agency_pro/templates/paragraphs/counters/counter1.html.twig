@@ -1,0 +1,32 @@
+    <section class="video-and-counters-1" data-aos="fade-up">
+        <div class="wrapper" style="background-image: url('{{ content.field_background_image.0 }}');">
+            <div class="video">
+                <div class="video-style-1">
+                    <div class="container">
+                        <div class="item">
+                            <img src="{{ content.field_image.0 }}" alt="Image" data-aos="zoom-in-down">
+                            <div class="overlay">
+                                <a data-fancybox="video-gallery" data-src="{{ content.field_video.0 }}" title="Play">
+                                    {# {{ content.field_icon.0 }} #}
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="79.016" height="79.015" viewBox="0 0 79.016 79.015">
+                                        <g id="noun_play_730810" transform="translate(-5 -5)">
+                                          <g class="Group_203" data-name="Group 203" transform="translate(5 5)">
+                                            <path id="Path_381" data-name="Path 381" d="M44.508,957.362A39.508,39.508,0,1,0,84.015,996.87a39.548,39.548,0,0,0-39.508-39.508Zm0,5.268a34.24,34.24,0,1,1-34.24,34.24A34.2,34.2,0,0,1,44.508,962.63ZM33.094,979.311v35.118l29.85-17.558Z" transform="translate(-5 -957.362)" fill="#fff"/>
+                                          </g>
+                                        </g>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="counters dt-section">
+                <div class="container">
+                    <div class="row">
+                        {{ content.field_counters }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

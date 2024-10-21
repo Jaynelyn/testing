@@ -1,0 +1,9 @@
+{% if content.field_about_section_variant.0['#markup'] in 'about1' %}
+    {% include '@agency_pro/paragraphs/about/about1.html.twig' %}
+{% elseif content.field_about_section_variant.0['#markup'] in 'about2' %}
+    {% include '@agency_pro/paragraphs/about/about2.html.twig' %}
+{% elseif content.field_about_section_variant.0['#markup'] in 'about3' %}
+    {% include '@agency_pro/paragraphs/about/about3.html.twig' %}
+{% else %}
+    {% include '@agency_pro/paragraphs/about/about4.html.twig' %}
+{% endif %}

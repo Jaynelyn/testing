@@ -1,0 +1,46 @@
+{% set paragraph_parent = paragraph.getParentEntity() %}
+{% set variant = paragraph_parent.field_counter_variant.value %}
+    {% if variant in 'counter2' %}
+        <div class="col-lg-3 col-md-3 col-12">
+            <div class="item">
+                <div class="icon">
+                   {{ content.field_icon.0 }}                               
+                </div>
+                <div class="count-details">
+                    {% if content.field_add_plus.0['#markup'] in '1' %}
+                        <div class="value"><span data-purecounter-start="0" data-purecounter-end="{{ content.field_count.0 }}" class="purecounter"></span><span>+</span></div>
+                    {% else %}
+                        <div class="value"><span data-purecounter-start="0" data-purecounter-end="{{ content.field_count.0 }}" class="purecounter"></span></div>
+                    {% endif %}
+                    <h5>{{ content.field_title.0 }}</h5>
+                </div>
+            </div>
+        </div>
+    {% elseif variant in 'counter3' %}
+        <div class="col-lg-3 col-md-3 col-12">
+            <div class="item">
+                <div class="icon">
+                    {{ content.field_icon.0 }}
+                </div>
+                <div class="count-details">
+                    {% if content.field_add_plus.0['#markup'] in '1' %}
+                        <div class="value"><span data-purecounter-start="0" data-purecounter-end="{{ content.field_count.0 }}" class="purecounter"></span><span>+</span></div>
+                    {% else %}
+                        <div class="value"><span data-purecounter-start="0" data-purecounter-end="{{ content.field_count.0 }}" class="purecounter"></span></div>
+                    {% endif %}                    
+                    <h5>{{ content.field_title.0 }}</h5>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <div class="col-lg-3 col-md-3 col-12">
+            <div class="item">
+            {% if content.field_add_plus.0['#markup'] in '1' %}
+                <div class="value"><span data-purecounter-start="0" data-purecounter-end="{{ content.field_count.0 }}" class="purecounter"></span><span>+</span></div>
+            {% else %}
+                <div class="value"><span data-purecounter-start="0" data-purecounter-end="{{ content.field_count.0 }}" class="purecounter"></span></div>
+            {% endif %}
+                <h5>{{ content.field_title.0 }}</h5>
+            </div>
+        </div>
+    {% endif %}

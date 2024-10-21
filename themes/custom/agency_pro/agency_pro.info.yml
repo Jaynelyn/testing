@@ -1,0 +1,47 @@
+name: Agency Pro
+type: theme
+description: 'Basic structure for a Agency Pro Theme.'
+core: 8.x
+core_version_requirement: ^8 || ^9 || ^10
+base theme: bootstrap_barrio
+
+dependencies:
+  - dt_user_statistics
+libraries:
+  - agency_pro/bootstrap
+  - agency_pro/global-styling
+
+regions:
+  top_header: 'Top header'
+  top_header_form: 'Top header form'
+  logo: Logo
+  header: Header
+  offcanvas: Offcanvas
+  header_form: 'Header form'
+  primary_menu: 'Primary menu'
+  secondary_menu: 'Secondary menu'
+  page_top: 'Page top'
+  page_bottom: 'Page bottom'
+  highlighted: Highlighted
+  featured_top: 'Featured top'
+  page_banner: 'Page Banner'
+  breadcrumb: 'Breadcrumb'
+  tabs: 'Tabs'
+  services_img: 'Services Image'
+  content: Content
+  sidebar_first: 'Sidebar first'
+  sidebar_second: 'Sidebar second'
+  featured_bottom_first: 'Featured bottom first'
+  featured_bottom_second: 'Featured bottom second'
+  featured_bottom_third: 'Featured bottom third'
+  footer_first: 'Footer first'
+  footer_second: 'Footer second'
+  footer_third: 'Footer third'
+  footer_fourth: 'Footer fourth'
+  footer_fifth: 'Footer fifth'
+
+libraries-override:
+  bootstrap_barrio/global-styling:
+    css:
+      component:
+        css/components/webform.css: false

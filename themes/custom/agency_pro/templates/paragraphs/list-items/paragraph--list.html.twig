@@ -1,0 +1,28 @@
+{% set paragraph_parent = paragraph.getParentEntity() %}
+{% set variant = paragraph_parent.field_list_variant.value %}
+    {% if variant in 'list2' %}
+        <li>
+            <div class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+                    <g class="Group_39197" data-name="Group 39197" transform="translate(-495.165 -2310.165)">
+                        <rect data-name="Rectangle 1788" width="18" height="18" rx="9" transform="translate(495.165 2310.165)" fill="#ee8d5a"></rect>
+                        <path data-name="Path 2190" d="M6.657,11.566l-1.9-1.9a.545.545,0,1,0-.771.771l2.286,2.286a.545.545,0,0,0,.771,0l5.787-5.787a.545.545,0,1,0-.771-.771Z" transform="translate(495.755 2309.72)" fill="#fff"></path>
+                    </g>
+                </svg>
+            </div>
+            {{ content.field_list_item.0 }}
+        </li>
+    {% elseif variant in 'list3' %}
+        <li>
+            {{ content.field_list_item.0 }}
+        </li>
+    {% else %}
+        <li>
+            <span class="icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="30" viewBox="0 0 15 30">
+                    <path data-name="Icon ionic-md-arrow-dropright" d="M13.5,9l15,15-15,15Z" transform="translate(-13.5 -9)" fill="#E53637"></path>
+                </svg>
+            </span>
+        {{ content.field_list_item.0 }}
+        </li>
+{% endif %}

@@ -1,0 +1,32 @@
+    <section class="dt-section bg-color" data-aos="fade-up">
+        <div class="about-us-2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5 col-md-7 col-12">
+                        <div class="about-content">
+                            {% if content.field_tagline.0 or  content.field_title.0%}
+                                <div class="home-2-2-title">
+                                    {% if content.field_tagline.0 %}
+                                        <span>{{ content.field_tagline.0 }}</span>
+                                    {% endif %}
+                                    <h2>{{ content.field_title.0 }}</h2>
+                                </div>
+                            {% endif %}
+                            {{ content.field_description.0 }}
+                            {{ content.field_list_items }}
+                            {% if content.field_read_more.0 %}
+                                <a href="{{ content.field_read_more.0['#url']}}" class="btn btn-primary btn-style-1 btn-style-lg" title="{{ content.field_read_more.0['#title']}}">{{ content.field_read_more.0['#title']}}</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-md-5 col-12">
+                        <div class="image">
+                            <img class="img-fluid" src="{{ file_url(content.field_image['#items'].entity.uri.value)}}"
+                                alt="{{ content.field_image['#items'].alt }}" 
+                                title="{{ content.field_image['#items'].title }}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

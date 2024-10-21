@@ -1,0 +1,5 @@
+{% if content.field_overview_features_variant.0['#markup'] in 'style1' %}
+    {% include '@agency_pro/paragraphs/overview-features/style1.html.twig' %}
+{% else %}
+    {% include '@agency_pro/paragraphs/overview-features/style2.html.twig' %}
+{% endif %}

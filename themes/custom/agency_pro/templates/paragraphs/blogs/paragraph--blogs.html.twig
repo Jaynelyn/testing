@@ -1,0 +1,19 @@
+{% if content.field_blogs.0.contents['#display_id'] in 'block_1' %}
+    {% include '@agency_pro/paragraphs/blogs/blogs1.html.twig' %}
+{% elseif content.field_blogs.0.contents['#display_id'] in 'block_2' %}
+    {% include '@agency_pro/paragraphs/blogs/blogs2.html.twig' %}
+{% elseif content.field_blogs.0.contents['#display_id'] in 'block_3' %}
+    {% include '@agency_pro/paragraphs/blogs/blogs3.html.twig' %}
+{% elseif content.field_blogs.0.contents['#display_id'] in 'block_4' %}
+    {% include '@agency_pro/paragraphs/blogs/blogs4.html.twig' %}
+{% elseif content.field_blogs.0.contents['#display_id'] in 'block_5' %}
+    {% include '@agency_pro/paragraphs/blogs/blogs5.html.twig' %}
+{% elseif content.field_blogs.0.contents['#display_id'] in 'block_6' %}
+    {% include '@agency_pro/paragraphs/blogs/blogs6.html.twig' %}
+{% elseif content.field_blogs.0.contents['#display_id'] in 'block_8' %}
+    {% include '@agency_pro/paragraphs/blogs/blogs8.html.twig' %}
+{% elseif content.field_blogs.0.contents['#display_id'] in 'block_9' %}
+    {% include '@agency_pro/paragraphs/blogs/blogs9.html.twig' %}
+{% else %}
+       {% include '@agency_pro/paragraphs/blogs/blogs-style-3.html.twig' %}
+{% endif %}

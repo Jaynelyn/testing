@@ -1,0 +1,21 @@
+{% if content.field_services.0.contents['#display_id'] in 'block_1' %}
+    {% include '@agency_pro/paragraphs/services/services1.html.twig' %}
+{% elseif content.field_services.0.contents['#display_id'] in 'block_2' %}
+    {% include '@agency_pro/paragraphs/services/services2.html.twig' %}
+{% elseif content.field_services.0.contents['#display_id'] in 'block_3' %}
+    {% include '@agency_pro/paragraphs/services/services3.html.twig' %}
+{% elseif content.field_services.0.contents['#display_id'] in 'block_4' %}
+    {% include '@agency_pro/paragraphs/services/services1.html.twig' %}
+{% elseif content.field_services.0.contents['#display_id'] in 'block_5' %}
+    {% include '@agency_pro/paragraphs/services/services-two-grid.html.twig' %}
+{% elseif content.field_services.0.contents['#display_id'] in 'block_6' %}
+    {% include '@agency_pro/paragraphs/services/services3.html.twig' %}
+{% elseif content.field_services.0.contents['#display_id'] in 'block_7' %}
+    {% include '@agency_pro/paragraphs/services/services-three-grid.html.twig' %}
+{% elseif content.field_services.0.contents['#display_id'] in 'block_8' %}
+    {% include '@agency_pro/paragraphs/services/services-four-grid.html.twig' %}
+{% elseif content.field_services.0.contents['#display_id'] in 'block_9' %}
+    {% include '@agency_pro/paragraphs/services/list-style1.html.twig' %}
+{% elseif content.field_services.0.contents['#display_id'] in 'block_10' %}
+    {% include '@agency_pro/paragraphs/services/list-style2.html.twig' %}
+{% endif %} 
